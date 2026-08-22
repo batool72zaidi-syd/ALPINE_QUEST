@@ -1,0 +1,12022 @@
+/* =========================================================
+   ALPINE QUEST
+   ONE COMPLETE STYLE.CSS
+   FOR ALL WEBSITE PAGES
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef3f1;
+    color: #173033;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION BAR
+   ========================================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 9999;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 22, 25, 0.96),
+        rgba(4, 22, 25, 0.45)
+    );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand a {
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid white;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.brand-text h2 {
+    color: white;
+
+    font-size: 19px;
+
+    letter-spacing: 3px;
+}
+
+.brand-text p {
+    margin-top: 5px;
+
+    color: #c8d9d5;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+.navbar nav {
+    height: 90px;
+}
+
+.navbar nav ul {
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    list-style: none;
+}
+
+.navbar nav ul li {
+    position: relative;
+}
+
+.navbar nav ul li > a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    height: 90px;
+
+    padding: 0 17px;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav ul li > a:hover,
+.navbar nav ul li > a.active {
+    color: #d7b878;
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.navbar nav ul li.dropdown {
+    position: relative;
+}
+
+
+/* Dropdown menu hidden */
+
+.navbar nav ul li.dropdown > .dropdown-menu {
+    position: absolute;
+
+    top: 90px;
+    left: 0;
+
+    width: 250px;
+
+    display: none;
+
+    height: auto;
+
+    padding: 8px 0;
+
+    margin: 0;
+
+    background: #071b1e;
+
+    border-top: 2px solid #d7b878;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+    list-style: none;
+
+    z-index: 10000;
+}
+
+
+/* Show dropdown */
+
+.navbar nav ul li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+
+/* Dropdown list items */
+
+.navbar nav ul li.dropdown > .dropdown-menu li {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+/* Dropdown links */
+
+.navbar nav ul li.dropdown > .dropdown-menu li a {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 15px 20px;
+
+    color: white;
+
+    background: transparent;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* Dropdown hover */
+
+.navbar nav ul li.dropdown > .dropdown-menu li a:hover {
+    color: #102b2f;
+
+    background: #d7b878;
+}
+
+
+/* Arrow */
+
+.navbar nav ul li.dropdown > a span {
+    font-size: 15px;
+
+    line-height: 1;
+
+    transition: 0.3s ease;news
+
+}
+
+.navbar nav ul li.dropdown:hover > a span {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   HOME PAGE
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+
+/* Hero slide */
+
+.hero .slide {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
+    z-index: 1;
+}
+
+
+/* Active slide */
+
+.hero .slide.active {
+    opacity: 1;
+    visibility: visible;
+
+    z-index: 2;
+}
+
+
+/* Hero image */
+
+.hero .slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* Hero overlay */
+
+.hero .overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.7)
+    );
+
+    z-index: 2;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 5;
+}
+
+.hero-content .location {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #e0d1a9;
+}
+
+.hero-content h1 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 80px;
+
+    font-weight: normal;
+
+    letter-spacing: 8px;
+
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content .description {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    text-shadow: 1px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.discover-btn,
+.dark-button,
+.light-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.discover-btn {
+  
+
+   
+}
+
+.discover-btn:hover {
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+.discover-btn span {
+    margin-left: 8px;
+}
+
+
+/* Dark button */
+
+.dark-button {
+    color: white;
+
+    background: #123337;
+}
+
+.dark-button:hover {
+    color: #102b2f;
+
+    background: #d7b878;
+
+    transform: translateY(-3px);
+}
+
+
+/* Light button */
+
+.light-button {
+    color: #102b2f;
+
+    background: #f4f0e6;
+}
+
+.light-button:hover {
+    color: white;
+
+    background: #123337;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   HOME SLIDER ARROWS
+   ========================================================= */
+
+.slider-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition: 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background: #d7b878;
+
+    color: #102b2f;
+
+    transform: translateY(-50%) scale(1.08);
+}
+
+.slider-arrow.previous {
+    left: 30px;
+}
+
+.slider-arrow.next {
+    right: 30px;
+}
+
+
+/* =========================================================
+   HOME SLIDER CONTROLS
+   ========================================================= */
+
+.slider-controls {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    z-index: 20;
+}
+
+.dots {
+    display: flex;
+
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.dot:hover {
+    background: white;
+}
+
+.dot.active {
+    background: #d7b878;
+
+    transform: scale(1.3);
+}
+
+.counter {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.counter i {
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   HOME INTRO
+   ========================================================= */
+
+.intro {
+    padding: 110px 15%;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #f4f0e6,
+        #e7efec
+    );
+}
+
+.section-label {
+    margin-bottom: 18px;
+
+    color: #8d713d;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.intro h2 {
+    margin-bottom: 25px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 52px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+.intro h2 span {
+    color: #8d713d;
+}
+
+.intro-text {
+    max-width: 750px;
+
+    margin: 0 auto 30px;
+
+    color: #627477;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.destinations {
+    padding: 100px 7%;
+
+    background: #eef3f1;
+}
+
+.heading {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.heading p {
+    margin-bottom: 15px;
+
+    color: #8d713d;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.heading h2 {
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+}
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+.destination-card {
+    position: relative;
+
+    min-height: 450px;
+
+    overflow: hidden;
+
+    background: #123337;
+
+    box-shadow: 0 15px 35px rgba(20, 50, 52, 0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.08);
+}
+
+.destination-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 60%;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.85)
+    );
+
+    z-index: 1;
+}
+
+.card-info {
+    position: absolute;
+
+    left: 25px;
+    right: 20px;
+    bottom: 25px;
+
+    color: white;
+
+    z-index: 2;
+}
+
+.card-info small {
+    color: #d7b878;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.card-info h3 {
+    margin: 8px 0 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+}
+
+.card-info a {
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.card-info a:hover {
+    color: #d7b878;
+}
+
+
+/* =========================================================
+   HOME CTA
+   ========================================================= */
+
+.cta {
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 10%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(7, 27, 30, 0.75),
+            rgba(7, 27, 30, 0.85)
+        ),
+        url("hunza1.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.cta p {
+    margin-bottom: 15px;
+
+    color: #d7b878;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.cta h2 {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 60px;
+
+    font-weight: normal;
+}
+
+
+/* =========================================================
+   SEASONS PAGE
+   ========================================================= */
+
+.season-slider {
+    position: relative;
+
+    width: 100%;
+
+    height: 720px;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+
+/* Season slides */
+
+.season-slider .slide {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.8s ease;
+
+    z-index: 1;
+}
+
+.season-slider .slide.active {
+    opacity: 1;
+    visibility: visible;
+
+    z-index: 2;
+}
+
+
+/* Season image */
+
+.season-slider .slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* Season overlay */
+
+.season-slider .slide::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.7)
+    );
+
+    z-index: 1;
+}
+
+
+/* Season text */
+
+.season-slider .slide-text {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 5;
+}
+
+.season-slider .season-label {
+    margin-bottom: 18px;
+
+    color: #d7b878;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.season-slider .slide-text h1 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 60px;
+
+    font-weight: normal;
+
+    letter-spacing: 4px;
+
+    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.season-slider .slide-text p:last-child {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    text-shadow: 1px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* Season arrows */
+
+.slider-button {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    color: white;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition: 0.3s ease;
+}
+
+.slider-button:hover {
+    background: #d7b878;
+
+    color: #102b2f;
+
+    transform: translateY(-50%) scale(1.08);
+}
+
+.slider-button.prev {
+    left: 30px;
+}
+
+.slider-button.next {
+    right: 30px;
+}
+
+
+/* Season dots */
+
+.slider-dots {
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 20;
+}
+
+.slider-dots .dot {
+    width: 12px;
+    height: 12px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+}
+
+.slider-dots .dot.active-dot {
+    background: #d7b878;
+
+    transform: scale(1.3);
+}
+
+
+/* =========================================================
+   SEASON INTRO
+   ========================================================= */
+
+.season-intro {
+    padding: 100px 15%;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #f4f0e6,
+        #e7efec
+    );
+}
+
+.season-intro h2 {
+    margin-bottom: 25px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+.season-intro p {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #627477;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   SEASON CARDS
+   ========================================================= */
+
+.season-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    padding: 90px 7%;
+
+    background: #eef3f1;
+}
+
+.season-card {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 15px 35px rgba(20, 50, 52, 0.13);
+
+    transition: 0.4s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 22px 45px rgba(20, 50, 52, 0.2);
+}
+
+.season-image {
+    width: 100%;
+    height: 300px;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: 0.5s ease;
+}
+
+.season-card:hover .season-image {
+    transform: scale(1.03);
+}
+
+
+/* Season images */
+
+.spring-image {
+    background-image: url("hunzasprig.jpeg");
+}
+
+.summer-image {
+    background-image: url("hunza-summer.jpeg");
+}
+
+.autumn-image {
+    background-image: url("hunza-autumn.jpeg");
+}
+
+.winter-image {
+    background-image: url("muree-sum.jpeg");
+}
+
+
+.season-content {
+    padding: 35px;
+}
+
+.season-content h2 {
+    margin-bottom: 18px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+}
+
+.season-content p {
+    margin-bottom: 18px;
+
+    color: #687a7b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.season-content h3 {
+    margin-bottom: 10px;
+
+    color: #8d713d;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.season-button {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 14px 20px;
+
+    color: white;
+
+    background: #123337;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.season-button:hover {
+    color: #102b2f;
+
+    background: #d7b878;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-hero {
+    position: relative;
+
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        url("monument islamabad2.jpeg")
+        center / cover no-repeat;
+}
+
+.about-overlay,
+.story-overlay,
+.eyes-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.about-hero-content,
+.story-hero-content,
+.eyes-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+}
+
+.about-hero-content h1,
+.story-hero-content h1 {
+    margin: 20px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 75px;
+
+    font-weight: normal;
+
+    line-height: 1;
+}
+
+.about-hero-content h1 span,
+.story-hero-content h1 span {
+    color: #d7b878;
+}
+
+.about-hero-content > p:last-child,
+.story-hero-content > p:last-child {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT INTRO
+   ========================================================= */
+
+.about-intro,
+.story-intro,
+.eyes-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    padding: 110px 10%;
+
+    background: #f4f0e6;
+}
+
+.about-intro-heading h2,
+.story-intro-heading h2,
+.eyes-intro h2 {
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+.about-intro-heading h2 span,
+.story-intro-heading h2 span,
+.eyes-intro h2 span {
+    color: #8d713d;
+}
+
+.about-intro-text p,
+.story-intro-text p,
+.intro-text p {
+    margin-bottom: 20px;
+
+    color: #627477;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   ABOUT MISSION
+   ========================================================= */
+
+.about-mission {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 600px;
+
+    background: #eef3f1;
+}
+
+.about-mission-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 600px;
+
+    object-fit: cover;
+}
+
+.about-mission-content {
+    padding: 80px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.about-number,
+.story-number,
+.vision-number {
+    margin-bottom: 20px;
+
+    color: #d7b878;
+
+    font-size: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.about-mission-content h2,
+.story-content h2,
+.vision-content h2 {
+    margin-bottom: 25px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+.about-mission-content h2 span,
+.story-content h2 span,
+.vision-content h2 span {
+    color: #8d713d;
+}
+
+.about-mission-content > p:not(.section-label),
+.story-content > p:not(.section-label),
+.vision-content > p:not(.section-label) {
+    margin-bottom: 18px;
+
+    color: #627477;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   ABOUT EXPLORE
+   ========================================================= */
+
+.about-explore {
+    padding: 100px 7%;
+
+    background: white;
+}
+
+.about-section-heading,
+.about-values-heading,
+.nature-heading {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.about-section-heading h2,
+.about-values-heading h2,
+.nature-heading h2 {
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+.about-section-heading h2 span,
+.about-values-heading h2 span,
+.nature-heading h2 span {
+    color: #8d713d;
+}
+
+.about-explore-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.about-card {
+    overflow: hidden;
+
+    background: #eef3f1;
+
+    box-shadow: 0 12px 30px rgba(20, 50, 52, 0.12);
+}
+
+.about-card img {
+    width: 100%;
+    height: 270px;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.about-card:hover img {
+    transform: scale(1.06);
+}
+
+.about-card-content {
+    padding: 25px;
+}
+
+.about-card-content small {
+    color: #8d713d;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.about-card-content h3 {
+    margin: 12px 0;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    font-weight: normal;
+}
+
+.about-card-content p {
+    color: #627477;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.about-values,
+.story-purpose {
+    padding: 100px 7%;
+
+    background: #eef3f1;
+}
+
+.values-grid,
+.story-purpose-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.value-box,
+.purpose-box {
+    padding: 40px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(20, 50, 52, 0.1);
+
+    transition: 0.3s ease;
+}
+
+.value-box:hover,
+.purpose-box:hover {
+    transform: translateY(-7px);
+}
+
+.value-box > span,
+.purpose-box > span {
+    color: #d7b878;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+}
+
+.value-box h3,
+.purpose-box h3 {
+    margin: 15px 0;
+
+    color: #173033;
+
+    letter-spacing: 2px;
+}
+
+.value-box p,
+.purpose-box p {
+    color: #627477;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT CTA
+   ========================================================= */
+
+.about-cta,
+.story-final,
+.final-eyes {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(7, 27, 30, 0.7),
+            rgba(7, 27, 30, 0.85)
+        ),
+        url("northernculture.jpeg")
+        center / cover no-repeat;
+}
+
+.about-cta-content,
+.story-final-content,
+.final-eyes-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+}
+
+.about-cta-content > p:first-child,
+.story-final-content > p:first-child,
+.final-eyes-content > p:first-child {
+    margin-bottom: 20px;
+
+    color: #d7b878;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.about-cta h2,
+.story-final h2,
+.final-eyes h2 {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 55px;
+
+    font-weight: normal;
+}
+
+.about-cta h2 span,
+.story-final h2 span {
+    color: #d7b878;
+}
+
+
+/* =========================================================
+   OUR STORY PAGE
+   ========================================================= */
+
+.story-hero {
+    position: relative;
+
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        url("northernculture.jpeg")
+        center / cover no-repeat;
+}
+
+.story-intro {
+    background: #f4f0e6;
+}
+
+.story-chapter {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 600px;
+
+    background: #eef3f1;
+}
+
+.story-chapter.reverse .story-image {
+    order: 2;
+}
+
+.story-chapter.reverse .story-content {
+    order: 1;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 600px;
+
+    object-fit: cover;
+}
+
+.story-content {
+    padding: 80px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.story-purpose-heading {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.story-purpose-heading h2 {
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+.story-purpose-heading h2 span {
+    color: #8d713d;
+}
+
+.story-final-content > p:nth-of-type(2) {
+    margin-bottom: 30px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PAKISTAN THROUGH OUR EYES
+   ========================================================= */
+
+.eyes-hero {
+    position: relative;
+
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        url("faisalmasjid.jpeg")
+        center / cover no-repeat;
+}
+
+.eyes-hero-content > p:first-child {
+    margin-bottom: 20px;
+
+    color: #d7b878;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.eyes-hero-content h1 {
+    margin-bottom: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 65px;
+
+    font-weight: normal;
+
+    line-height: 1.1;
+}
+
+.hero-line {
+    width: 60px;
+    height: 2px;
+
+    margin: 0 auto 25px;
+
+    background: #d7b878;
+}
+
+.eyes-hero-content span {
+    font-size: 16px;
+}
+
+.eyes-intro {
+    background: #f4f0e6;
+}
+
+.eyes-intro .intro-heading h2 {
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+.vision-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 600px;
+
+    background: #eef3f1;
+}
+
+.vision-section.reverse .vision-image {
+    order: 2;
+}
+
+.vision-section.reverse .vision-content {
+    order: 1;
+}
+
+.vision-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 600px;
+
+    object-fit: cover;
+}
+
+.vision-content {
+    padding: 80px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   PEOPLE
+   ========================================================= */
+
+.people-section {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        url("swat1.jpeg")
+        center / cover no-repeat;
+}
+
+.people-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.people-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    padding: 30px;
+}
+
+.people-content > span {
+    color: #d7b878;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.people-content h2 {
+    margin: 20px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 55px;
+
+    font-weight: normal;
+}
+
+.people-content p {
+    margin-bottom: 15px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   NATURE
+   ========================================================= */
+
+.nature-section {
+    padding: 100px 7%;
+
+    background: #f4f0e6;
+}
+
+.nature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.nature-card {
+    overflow: hidden;
+
+    background: white;
+
+    box-shadow: 0 12px 30px rgba(20, 50, 52, 0.12);
+}
+
+.nature-card img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.nature-card:hover img {
+    transform: scale(1.05);
+}
+
+.nature-card-content {
+    padding: 25px;
+}
+
+.nature-card-content small {
+    color: #8d713d;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.nature-card-content h3 {
+    margin: 12px 0;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-weight: normal;
+}
+
+.nature-card-content p {
+    color: #627477;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FINAL EYES
+   ========================================================= */
+
+.final-eyes-content > p {
+    margin-bottom: 20px;
+
+    color: #d7b878;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.final-eyes-content h2 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 55px;
+
+    font-weight: normal;
+}
+
+.final-eyes-content span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #071b1e,
+        #102f33
+    );
+}
+
+footer h2 {
+    margin-bottom: 15px;
+
+    font-size: 22px;
+
+    letter-spacing: 4px;
+}
+
+footer p {
+    margin-bottom: 25px;
+
+    color: #c8d9d5;
+
+    font-size: 13px;
+}
+
+.footer-line {
+    width: 70px;
+    height: 1px;
+
+    margin: 0 auto 20px;
+
+    background: #d7b878;
+}
+
+footer small {
+    color: #8ea19f;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ALPINE QUEST
+   INDIVIDUAL SEASON PAGES
+   SPRING / SUMMER / AUTUMN / WINTER
+   ========================================================= */
+
+
+/* =========================================================
+   SEASON PAGE HERO
+   ========================================================= */
+
+.season-page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #102b2f;
+}
+
+
+/* HERO IMAGE */
+
+.season-page-hero img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+
+/* DARK OVERLAY */
+
+.season-page-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.65)
+        );
+
+    z-index: 2;
+}
+
+
+/* HERO CONTENT */
+
+.season-page-content {
+    position: relative;
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 5;
+
+    padding-top: 80px;
+}
+
+
+.season-page-content .season-small-title {
+    margin-bottom: 20px;
+
+    color: #d7b878;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+.season-page-content h1 {
+    margin-bottom: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 70px;
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        2px 4px 15px rgba(0,0,0,0.8);
+}
+
+
+.season-page-content p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    text-shadow:
+        1px 2px 8px rgba(0,0,0,0.8);
+}
+
+
+
+/* =========================================================
+   SEASON INTRO
+   ========================================================= */
+
+.season-page-intro {
+    padding: 90px 12%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f1e8,
+            #e8f0ed
+        );
+}
+
+
+.season-page-intro .section-label {
+    margin-bottom: 15px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.season-page-intro h2 {
+    margin-bottom: 25px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+}
+
+
+.season-page-intro h2 span {
+    color: #8d713d;
+}
+
+
+.season-page-intro p {
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #687a7b;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+
+/* =========================================================
+   PLACES SECTION
+   ========================================================= */
+
+.season-places {
+    padding: 90px 7%;
+
+    background: #eef3f1;
+}
+
+
+.season-places-heading {
+    max-width: 850px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.season-places-heading .section-label {
+    margin-bottom: 15px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.season-places-heading h2 {
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+}
+
+
+.season-places-heading h2 span {
+    color: #8d713d;
+}
+
+
+
+/* =========================================================
+   PLACES GRID
+   ========================================================= */
+
+.season-places-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+
+/* =========================================================
+   PLACE CARD
+   ========================================================= */
+
+.season-place-card {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px rgba(20,50,52,0.13);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.season-place-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 22px 45px rgba(20,50,52,0.20);
+}
+
+
+
+/* =========================================================
+   PLACE IMAGE
+   ========================================================= */
+
+.season-place-image {
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.season-place-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.season-place-card:hover
+.season-place-image img {
+    transform: scale(1.06);
+}
+
+
+
+/* =========================================================
+   PLACE CONTENT
+   ========================================================= */
+
+.season-place-content {
+    padding: 30px;
+}
+
+
+.season-place-content small {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #8d713d;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.season-place-content h3 {
+    margin-bottom: 15px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+}
+
+
+.season-place-content p {
+    margin-bottom: 15px;
+
+    color: #687a7b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.season-place-content strong {
+    color: #173033;
+}
+
+
+
+/* =========================================================
+   WHY VISIT BOX
+   ========================================================= */
+
+.season-why {
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background: #f4f0e6;
+
+    border-left: 3px solid #d7b878;
+}
+
+
+.season-why h4 {
+    margin-bottom: 8px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.season-why p {
+    margin: 0;
+
+    color: #526668;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   SEASON TIPS
+   ========================================================= */
+
+.season-tips {
+    padding: 90px 10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #102f33,
+            #071b1e
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.season-tips h2 {
+    margin-bottom: 40px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+}
+
+
+.season-tips h2 span {
+    color: #d7b878;
+}
+
+
+.season-tips-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.season-tip {
+    padding: 30px 25px;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    transition: 0.3s ease;
+}
+
+
+.season-tip:hover {
+    transform: translateY(-6px);
+
+    border-color: #d7b878;
+
+    background:
+        rgba(255,255,255,0.09);
+}
+
+
+.season-tip span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #d7b878;
+
+    font-size: 22px;
+}
+
+
+.season-tip h3 {
+    margin-bottom: 12px;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+}
+
+
+.season-tip p {
+    color: #c5d1d0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   SEASON CTA
+   ========================================================= */
+
+.season-page-cta {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #f4f0e6;
+}
+
+
+.season-page-cta p {
+    margin-bottom: 15px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.season-page-cta h2 {
+    margin-bottom: 30px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+}
+
+
+.season-page-cta h2 span {
+    color: #8d713d;
+}
+
+
+
+/* =========================================================
+   SEASON PAGE BUTTON
+   ========================================================= */
+
+.season-page-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    color: white;
+
+    background: #123337;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.season-page-button:hover {
+    color: #102b2f;
+
+    background: #d7b878;
+
+    transform: translateY(-3px);
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .season-page-content h1 {
+        font-size: 50px;
+    }
+
+    .season-places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .season-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .season-page-hero {
+        min-height: 580px;
+    }
+
+    .season-page-content h1 {
+        font-size: 38px;
+
+        letter-spacing: 3px;
+    }
+
+    .season-page-content p {
+        font-size: 15px;
+    }
+
+    .season-page-intro h2,
+    .season-places-heading h2,
+    .season-page-cta h2 {
+        font-size: 32px;
+    }
+
+    .season-place-image {
+        height: 230px;
+    }
+
+    .season-tips {
+        padding: 70px 7%;
+    }
+
+}========================== */
+/* =========================================================
+   ALPINE QUEST - SPRING PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   SPRING HERO
+   ========================================================= */
+
+.spring-hero {
+
+    position: relative;
+
+    width: 100%;
+    height: 700px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #173033;
+}
+
+
+.spring-hero > img {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+.spring-overlay {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.20),
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.72)
+        );
+
+    z-index: 2;
+}
+
+
+.spring-hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 90%;
+
+    max-width: 900px;
+
+    padding-top: 80px;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+.spring-label {
+
+    margin-bottom: 20px;
+
+    color: #d7b878;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+.spring-hero-content h1 {
+
+    margin-bottom: 25px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 72px;
+
+    font-weight: normal;
+
+    line-height: 1.05;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        2px 4px 15px rgba(0,0,0,0.8);
+}
+
+
+.spring-hero-content h1 span {
+
+    color: #d7b878;
+}
+
+
+.spring-hero-text {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    text-shadow:
+        1px 3px 8px rgba(0,0,0,0.8);
+}
+
+
+
+/* =========================================================
+   SPRING INTRO
+   ========================================================= */
+
+.spring-intro {
+
+    padding: 100px 15%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f0e6,
+            #e7efec
+        );
+}
+
+
+.spring-section-label {
+
+    margin-bottom: 18px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.spring-intro h2 {
+
+    margin-bottom: 25px;
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    line-height: 1.25;
+}
+
+
+.spring-intro h2 span {
+
+    color: #8d713d;
+}
+
+
+.spring-intro > p:not(.spring-section-label) {
+
+    max-width: 800px;
+
+    margin: 0 auto 15px;
+
+    color: #687a7b;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+
+/* =========================================================
+   BEST PLACES
+   ========================================================= */
+
+.spring-places {
+
+    padding: 90px 7%;
+
+    background: #eef3f1;
+}
+
+
+.spring-heading {
+
+    max-width: 850px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.spring-heading h2 {
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    line-height: 1.3;
+}
+
+
+.spring-heading h2 span {
+
+    color: #8d713d;
+}
+
+
+
+/* =========================================================
+   SPRING CARDS GRID
+   ========================================================= */
+
+.spring-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+
+/* =========================================================
+   SPRING CARD
+   ========================================================= */
+
+.spring-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px rgba(20,50,52,0.13);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.spring-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 22px 45px rgba(20,50,52,0.20);
+}
+
+
+
+/* =========================================================
+   SPRING CARD IMAGE
+   ========================================================= */
+
+.spring-card-image {
+
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.spring-card-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.spring-card:hover
+.spring-card-image img {
+
+    transform: scale(1.06);
+}
+
+
+
+/* =========================================================
+   SPRING CARD CONTENT
+   ========================================================= */
+
+.spring-card-content {
+
+    padding: 32px;
+}
+
+
+.spring-card-content small {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #8d713d;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.spring-card-content h3 {
+
+    margin-bottom: 15px;
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 29px;
+
+    font-weight: normal;
+}
+
+
+.spring-card-content > p {
+
+    margin-bottom: 18px;
+
+    color: #687a7b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   WHY GO BOX
+   ========================================================= */
+
+.spring-reason {
+
+    padding: 18px;
+
+    background: #f4f0e6;
+
+    border-left: 3px solid #d7b878;
+}
+
+
+.spring-reason h4 {
+
+    margin-bottom: 8px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.spring-reason p {
+
+    margin: 0;
+
+    color: #526668;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   SPRING ACTIVITIES
+   ========================================================= */
+
+.spring-activities {
+
+    padding: 90px 8%;
+
+    color: white;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #102f33,
+            #071b1e
+        );
+}
+
+
+.spring-activities-heading {
+
+    margin-bottom: 45px;
+}
+
+
+.spring-activities-heading h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 43px;
+
+    font-weight: normal;
+}
+
+
+.spring-activities-heading h2 span {
+
+    color: #d7b878;
+}
+
+
+
+/* =========================================================
+   ACTIVITY GRID
+   ========================================================= */
+
+.spring-activity-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.spring-activity {
+
+    padding: 32px 25px;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    transition: 0.3s ease;
+}
+
+
+.spring-activity:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #d7b878;
+
+    background:
+        rgba(255,255,255,0.09);
+}
+
+
+.spring-activity span {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #d7b878;
+
+    font-size: 22px;
+}
+
+
+.spring-activity h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+
+.spring-activity p {
+
+    color: #c5d1d0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   SPRING CTA
+   ========================================================= */
+
+.spring-cta {
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #f4f0e6;
+}
+
+
+.spring-cta > p {
+
+    margin-bottom: 15px;
+
+    color: #8d713d;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.spring-cta h2 {
+
+    margin-bottom: 30px;
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+
+.spring-cta h2 span {
+
+    color: #8d713d;
+}
+
+
+
+/* =========================================================
+   SPRING BUTTON
+   ========================================================= */
+
+.spring-button {
+
+    display: inline-block;
+
+    margin: 5px;
+
+    padding: 15px 24px;
+
+    color: white;
+
+    background: #123337;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.spring-button:hover {
+
+    color: #102b2f;
+
+    background: #d7b878;
+
+    transform: translateY(-3px);
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .spring-hero {
+        height: 620px;
+    }
+
+
+    .spring-hero-content h1 {
+        font-size: 55px;
+    }
+
+
+    .spring-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .spring-activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .spring-hero {
+        height: 570px;
+    }
+
+
+    .spring-hero-content {
+        padding-top: 90px;
+    }
+
+
+    .spring-hero-content h1 {
+        font-size: 40px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .spring-hero-text {
+        font-size: 15px;
+    }
+
+
+    .spring-intro {
+        padding: 70px 8%;
+    }
+
+
+    .spring-intro h2,
+    .spring-heading h2 {
+        font-size: 32px;
+    }
+
+
+    .spring-card-image {
+        height: 230px;
+    }
+
+
+    .spring-cta h2 {
+        font-size: 35px;
+    }
+
+}
+/* =========================================================
+   SPRING PAGE
+   ========================================================= */
+
+.spring-hero {
+    position: relative;
+    width: 100%;
+    height: 720px;
+
+    background-image: url("hunzasprig.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.spring-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.55)
+        );
+}
+
+
+.spring-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.spring-label {
+    margin-bottom: 22px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+
+.spring-hero-content h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 70px;
+    line-height: 1.05;
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    text-shadow: 2px 5px 15px rgba(0,0,0,0.7);
+}
+
+
+.spring-hero-content h1 span {
+    color: #f0d59b;
+}
+
+
+.spring-line {
+    width: 80px;
+    height: 2px;
+
+    margin: 28px auto;
+
+    background: #d7b878;
+}
+
+
+.spring-description {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    text-shadow: 1px 3px 8px rgba(0,0,0,0.8);
+}
+
+
+/* =========================================================
+   SPRING INTRO
+   ========================================================= */
+
+.spring-intro {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #f4f0e6,
+        #e7efec
+    );
+}
+
+
+.spring-intro h2 {
+    margin: 20px 0 25px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+
+.spring-intro h2 span {
+    color: #8d713d;
+}
+
+
+.spring-intro > p:last-child {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    color: #627477;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   SPRING PLACES
+   ========================================================= */
+
+.spring-places {
+    padding: 100px 7%;
+
+    background: #eef3f1;
+}
+
+
+.spring-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.spring-heading h2 {
+    margin-top: 20px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+
+.spring-heading h2 span {
+    color: #8d713d;
+}
+
+
+/* =========================================================
+   SPRING GRID
+   ========================================================= */
+
+.spring-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   SPRING CARD
+   ========================================================= */
+
+.spring-card {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px rgba(20,50,52,0.13);
+
+    transition: 0.4s ease;
+}
+
+
+.spring-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 22px 45px rgba(20,50,52,0.20);
+}
+
+
+.spring-card-image {
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.spring-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+
+.spring-card:hover .spring-card-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.spring-card-content {
+    padding: 32px;
+}
+
+
+.spring-card-content small {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #8d713d;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.spring-card-content h3 {
+    margin-bottom: 16px;
+
+    color: #173033;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+}
+
+
+.spring-card-content p {
+    margin-bottom: 18px;
+
+    color: #687a7b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.spring-card-content h4 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    color: #173033;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   SPRING ADVENTURE
+   ========================================================= */
+
+.spring-adventure {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(4,22,25,0.55),
+            rgba(4,22,25,0.65)
+        ),
+        url("hunza1.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.spring-adventure-content {
+    width: 90%;
+    max-width: 800px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.spring-adventure-content > p {
+    margin-bottom: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+
+.spring-adventure-content h2 {
+    margin: 0 0 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 50px;
+
+    line-height: 1.2;
+
+    font-weight: normal;
+}
+
+
+.spring-adventure-content h2 span {
+    color: #d7b878;
+}
+
+
+.spring-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    color: #102b2f;
+
+    background: #d7b878;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.spring-button:hover {
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SPRING RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .spring-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spring-hero-content h1 {
+        font-size: 55px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .spring-hero {
+        height: 650px;
+    }
+
+    .spring-hero-content h1 {
+        font-size: 43px;
+        letter-spacing: 3px;
+    }
+
+    .spring-description {
+        font-size: 15px;
+    }
+
+    .spring-intro h2,
+    .spring-heading h2 {
+        font-size: 36px;
+    }
+
+    .spring-adventure-content h2 {
+        font-size: 36px;
+    }
+
+}
+/* =========================================================
+   ALPINE QUEST
+   SPRING PAGE SLIDER
+   ========================================================= */
+
+
+/* =========================================================
+   SPRING SLIDER
+   ========================================================= */
+
+.spring-slider {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 720px;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+
+/* =========================================================
+   EACH SLIDE
+   ========================================================= */
+
+.spring-slide {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
+    z-index: 1;
+
+}
+
+
+/* ACTIVE SLIDE */
+
+.spring-slide.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   SLIDE IMAGE
+   ========================================================= */
+
+.spring-slide img {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+/* =========================================================
+   SLIDE OVERLAY
+   ========================================================= */
+
+.spring-slide-overlay {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.70)
+        );
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   SLIDE CONTENT
+   ========================================================= */
+
+.spring-slide-content {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 5;
+
+}
+
+
+/* SMALL LOCATION */
+
+.spring-slide-label {
+
+    margin-bottom: 18px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        1px 2px 7px rgba(0,0,0,0.8);
+
+}
+
+
+/* MAIN TITLE */
+
+.spring-slide-content h1 {
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 72px;
+
+    font-weight: normal;
+
+    line-height: 1;
+
+    letter-spacing: 6px;
+
+    text-shadow:
+        2px 5px 15px rgba(0,0,0,0.8);
+
+}
+
+
+/* GOLD LINE */
+
+.spring-slide-line {
+
+    width: 80px;
+
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: #d7b878;
+
+}
+
+
+/* SECOND TITLE */
+
+.spring-slide-content h2 {
+
+    margin-bottom: 15px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #f0d59b;
+
+    text-shadow:
+        1px 3px 8px rgba(0,0,0,0.8);
+
+}
+
+
+/* DESCRIPTION */
+
+.spring-slide-content > p:last-of-type {
+
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-shadow:
+        1px 3px 8px rgba(0,0,0,0.8);
+
+}
+
+
+/* =========================================================
+   COUNTER
+   ========================================================= */
+
+.spring-counter {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.spring-counter i {
+
+    display: block;
+
+    width: 25px;
+
+    height: 1px;
+
+    background:
+        rgba(255,255,255,0.6);
+
+}
+
+
+/* =========================================================
+   SPRING INTRO
+   ========================================================= */
+
+.spring-intro {
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f0e6,
+            #e7efec
+        );
+
+}
+
+
+.spring-intro h2 {
+
+    margin: 20px 0 25px;
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+}
+
+
+.spring-intro h2 span {
+
+    color: #8d713d;
+
+}
+
+
+.spring-intro > p:last-child {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #627477;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =========================================================
+   SPRING PLACES
+   ========================================================= */
+
+.spring-places {
+
+    padding: 100px 7%;
+
+    background: #eef3f1;
+
+}
+
+
+.spring-heading {
+
+    margin-bottom: 60px;
+
+    text-align: center;
+
+}
+
+
+.spring-heading h2 {
+
+    margin-top: 20px;
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+}
+
+
+.spring-heading h2 span {
+
+    color: #8d713d;
+
+}
+
+
+/* =========================================================
+   SPRING GRID
+   ========================================================= */
+
+.spring-grid {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   SPRING CARD
+   ========================================================= */
+
+.spring-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(20,50,52,0.13);
+
+    transition: 0.4s ease;
+
+}
+
+
+.spring-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 22px 45px
+        rgba(20,50,52,0.20);
+
+}
+
+
+/* =========================================================
+   CARD IMAGE
+   ========================================================= */
+
+.spring-card-image {
+
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+
+}
+
+
+.spring-card-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+
+}
+
+
+.spring-card:hover
+.spring-card-image img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.spring-card-content {
+
+    padding: 32px;
+
+}
+
+
+.spring-card-content small {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #8d713d;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.spring-card-content h3 {
+
+    margin-bottom: 16px;
+
+    color: #173033;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+}
+
+
+.spring-card-content p {
+
+    margin-bottom: 18px;
+
+    color: #687a7b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+.spring-card-content h4 {
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+
+    color: #173033;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   FINAL SPRING ADVENTURE
+========================================================= */
+
+.spring-adventure {
+
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-image:
+
+        linear-gradient(
+            rgba(4,22,25,0.55),
+            rgba(4,22,25,0.65)
+        ),
+
+        url("hunza1.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.spring-adventure-content {
+
+    width: 90%;
+
+    max-width: 800px;
+
+    color: white;
+
+}
+
+
+.spring-adventure-content > p {
+
+    margin-bottom: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+}
+
+
+.spring-adventure-content h2 {
+
+    margin-bottom: 30px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 50px;
+
+    line-height: 1.2;
+
+    font-weight: normal;
+
+}
+
+
+.spring-adventure-content h2 span {
+
+    color: #d7b878;
+
+}
+
+
+.spring-button {
+
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    color: #102b2f;
+
+    background: #d7b878;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.spring-button:hover {
+
+    background: white;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================================================
+   SPRING RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .spring-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .spring-slide-content h1 {
+
+        font-size: 55px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .spring-slider {
+
+        height: 650px;
+
+    }
+
+    .spring-slide-content h1 {
+
+        font-size: 42px;
+
+        letter-spacing: 3px;
+
+    }
+
+    .spring-slide-content h2 {
+
+        font-size: 22px;
+
+    }
+
+    .spring-slide-content > p:last-of-type {
+
+        font-size: 14px;
+
+    }
+
+    .spring-arrow {
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 25px;
+
+    }
+
+    .spring-prev {
+
+        left: 15px;
+
+    }
+
+    .spring-next {
+
+        right: 15px;
+
+    }
+
+    .spring-intro h2,
+    .spring-heading h2 {
+
+        font-size: 36px;
+
+    }
+
+    .spring-adventure-content h2 {
+
+        font-size: 36px;
+
+    }
+
+}
+/* =========================================================
+   ALPINE QUEST - SUMMER PAGE
+   Scoped only to summer.html
+   No JavaScript / No slider
+   ========================================================= */
+
+
+/* =========================================================
+   SUMMER PAGE BODY
+   ========================================================= */
+
+body.summer-page {
+    margin: 0;
+    padding: 0;
+    background: #f5f3ed;
+    color: #17211b;
+}
+
+
+/* =========================================================
+   SUMMER HERO
+   ========================================================= */
+
+.summer-page .summer-hero {
+    position: relative;
+    min-height: 150vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+
+/* Hero Image */
+
+.summer-page .summer-hero img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/* Dark overlay */
+
+.summer-page .summer-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.38),
+            rgba(0, 0, 0, 0.18)
+        );
+
+    z-index: 2;
+}
+
+
+/* Hero Text */
+
+.summer-page .summer-hero-content {
+    position: relative;
+    z-index: 3;
+
+    width: 90%;
+    max-width: 1100px;
+
+    color: white;
+
+    text-align: left;
+
+    padding: 100px 0 80px;
+}
+
+
+.summer-page .summer-hero-content .section-label {
+    margin-bottom: 18px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.summer-page .summer-hero-content h1 {
+    margin: 0 0 20px;
+
+    font-size: clamp(48px, 7vw, 92px);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+.summer-page .summer-hero-content h1 span {
+    color: #d8e6c3;
+}
+
+
+.summer-page .summer-hero-content > p:last-child {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   SUMMER INTRO
+   ========================================================= */
+
+.summer-page .summer-intro {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 100px 7% 80px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.summer-page .summer-intro-heading .section-label {
+    margin-bottom: 18px;
+
+    color: #65765e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.summer-page .summer-intro-heading h2 {
+    margin: 0;
+
+    font-size: clamp(38px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    color: #17211b;
+}
+
+
+.summer-page .summer-intro-heading h2 span {
+    color: #718763;
+}
+
+
+.summer-page .summer-intro-text p {
+    margin: 0 0 22px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #5b625c;
+}
+
+
+/* =========================================================
+   SUMMER DESTINATIONS
+   ========================================================= */
+
+.summer-page .summer-destinations {
+    padding: 90px 6% 110px;
+
+    background: #e9eee5;
+}
+
+
+.summer-page .summer-heading {
+    max-width: 1150px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.summer-page .summer-heading .section-label {
+    margin-bottom: 15px;
+
+    color: #65765e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.summer-page .summer-heading h2 {
+    margin: 0;
+
+    color: #17211b;
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    line-height: 1.05;
+}
+
+
+.summer-page .summer-heading h2 span {
+    color: #718763;
+}
+
+
+/* =========================================================
+   DESTINATION GRID
+   ========================================================= */
+
+.summer-page .summer-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   SUMMER CARDS
+   ========================================================= */
+
+.summer-page .summer-card {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+.summer-page .summer-card img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 500px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.summer-page .summer-card:hover img {
+    transform: scale(1.06);
+}
+
+
+/* Card Overlay */
+
+.summer-page .summer-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.05)
+        );
+
+    z-index: 1;
+}
+
+
+/* Card Content */
+
+.summer-page .summer-card-content {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+    bottom: 30px;
+
+    z-index: 2;
+
+    color: white;
+}
+
+
+.summer-page .summer-card-content small {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #d8e6c3;
+}
+
+
+.summer-page .summer-card-content h3 {
+    margin: 0 0 12px;
+
+    font-size: 32px;
+
+    line-height: 1.1;
+
+    color: white;
+}
+
+
+.summer-page .summer-card-content p {
+    margin: 0;
+
+    max-width: 500px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================================
+   WHY VISIT IN SUMMER
+   ========================================================= */
+
+.summer-page .summer-why {
+    padding: 100px 7%;
+
+    background: #f5f3ed;
+}
+
+
+.summer-page .summer-why-inner {
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+
+.summer-page .summer-why-heading {
+    margin-bottom: 55px;
+
+    text-align: center;
+}
+
+
+.summer-page .summer-why-heading .section-label {
+    color: #65765e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+.summer-page .summer-why-heading h2 {
+    margin: 0;
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    color: #17211b;
+}
+
+
+.summer-page .summer-why-heading h2 span {
+    color: #718763;
+}
+
+
+/* Why Grid */
+
+.summer-page .summer-reasons {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* Reason Box */
+
+.summer-page .summer-reason {
+    padding: 38px 30px;
+
+    background: white;
+
+    border: 1px solid rgba(23, 33, 27, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.summer-page .summer-reason:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+.summer-page .summer-reason span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #718763;
+}
+
+
+.summer-page .summer-reason h3 {
+    margin: 0 0 15px;
+
+    font-size: 22px;
+
+    color: #17211b;
+}
+
+
+.summer-page .summer-reason p {
+    margin: 0;
+
+    color: #646b65;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SUMMER TRAVEL TIP
+   ========================================================= */
+
+.summer-page .summer-tip {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 80px 7%;
+}
+
+
+.summer-page .summer-tip-box {
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dce6d5,
+            #eef2e9
+        );
+
+    border-left: 5px solid #718763;
+}
+
+
+.summer-page .summer-tip-box .section-label {
+    margin-bottom: 15px;
+
+    color: #65765e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.summer-page .summer-tip-box h2 {
+    margin: 0 0 18px;
+
+    font-size: 36px;
+
+    color: #17211b;
+}
+
+
+.summer-page .summer-tip-box p {
+    margin: 0;
+
+    max-width: 850px;
+
+    color: #555d56;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   FINAL SUMMER CTA
+   ========================================================= */
+
+.summer-page .summer-cta {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+
+.summer-page .summer-cta img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+
+.summer-page .summer-cta::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.60);
+
+    z-index: 2;
+}
+
+
+.summer-page .summer-cta-content {
+    position: relative;
+
+    z-index: 3;
+
+    padding: 70px 20px;
+
+    color: white;
+}
+
+
+.summer-page .summer-cta-content > p:first-child {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.summer-page .summer-cta-content h2 {
+    margin: 0 0 28px;
+
+    font-size: clamp(45px, 7vw, 78px);
+
+    line-height: 0.98;
+}
+
+
+.summer-page .summer-cta-content h2 span {
+    color: #d8e6c3;
+}
+
+
+.summer-page .summer-cta-content > p:last-of-type {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================================
+   SUMMER BUTTON
+   ========================================================= */
+
+.summer-page .summer-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    color: #17211b;
+
+    background: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.summer-page .summer-button:hover {
+    background: #d8e6c3;
+
+    color: #17211b;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SUMMER PAGE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .summer-page .summer-intro {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 75px;
+    }
+
+
+    .summer-page .summer-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .summer-page .summer-reasons {
+        grid-template-columns: 1fr;
+    }
+
+
+    .summer-page .summer-card,
+    .summer-page .summer-card img {
+        min-height: 450px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .summer-page .summer-hero {
+        min-height: 70vh;
+    }
+
+
+    .summer-page .summer-hero-content {
+        padding: 80px 0 60px;
+    }
+
+
+    .summer-page .summer-hero-content h1 {
+        font-size: 48px;
+    }
+
+
+    .summer-page .summer-intro {
+        padding: 65px 7%;
+    }
+
+
+    .summer-page .summer-destinations {
+        padding: 70px 6%;
+    }
+
+
+    .summer-page .summer-card,
+    .summer-page .summer-card img {
+        min-height: 400px;
+    }
+
+
+    .summer-page .summer-card-content {
+        left: 22px;
+        right: 22px;
+        bottom: 24px;
+    }
+
+
+    .summer-page .summer-card-content h3 {
+        font-size: 27px;
+    }
+
+
+    .summer-page .summer-why {
+        padding: 70px 7%;
+    }
+
+
+    .summer-page .summer-tip {
+        padding: 60px 7%;
+    }
+
+
+    .summer-page .summer-tip-box {
+        padding: 35px 25px;
+    }
+
+
+    .summer-page .summer-tip-box h2 {
+        font-size: 29px;
+    }
+
+
+    .summer-page .summer-cta {
+        min-height: 450px;
+    }
+
+}
+/* =========================================================
+   ALPINE QUEST
+   AUTUMN PAGE
+   Add this at the VERY END of style.css
+   ========================================================= */
+
+
+/* =========================================================
+   AUTUMN HERO
+   ========================================================= */
+
+.season-page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+
+    background-image: url("hunza-autumn.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.autumn-hero {
+    background-image: url("hunza-autumn.jpeg");
+}
+
+
+.season-page-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.20)
+        );
+}
+
+
+.season-page-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1100px;
+
+    color: white;
+
+    text-align: left;
+
+    padding-top: 80px;
+}
+
+
+.season-page-content .section-label {
+    color: #f0b35b;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.season-page-content h1 {
+    margin: 0 0 25px;
+
+    font-size: clamp(50px, 8vw, 100px);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+}
+
+
+.season-page-content h1 span {
+    color: #e29b45;
+}
+
+
+.season-page-content > p:last-child {
+    max-width: 620px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================================
+   AUTUMN INTRODUCTION
+   ========================================================= */
+
+.season-page-intro {
+    width: 100%;
+
+    padding: 110px 8%;
+
+    background: #f7f4ef;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    box-sizing: border-box;
+}
+
+
+.season-page-intro .section-label {
+    color: #a96527;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+
+.season-page-intro h2 {
+    margin: 0;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1.05;
+
+    color: #171717;
+}
+
+
+.season-page-intro h2 span {
+    color: #a96527;
+}
+
+
+.season-page-intro > div:last-child {
+    padding-top: 15px;
+}
+
+
+.season-page-intro > div:last-child p {
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin: 0 0 25px;
+}
+
+
+/* =========================================================
+   AUTUMN DESTINATION SECTIONS
+   ========================================================= */
+
+.season-place {
+    width: 100%;
+
+    min-height: 560px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+}
+
+
+.season-place.reverse {
+    background: #f7f4ef;
+}
+
+
+.season-place-image {
+    width: 100%;
+    height: 100%;
+
+    min-height: 560px;
+
+    overflow: hidden;
+}
+
+
+.season-place-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 560px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+.season-place-image:hover img {
+    transform: scale(1.05);
+}
+
+
+.season-place-content {
+    padding: 80px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+.season-place-content > span {
+    color: #a96527;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.season-place-content h2 {
+    margin: 0 0 25px;
+
+    color: #171717;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.season-place-content p {
+    max-width: 560px;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    margin: 0 0 22px;
+}
+
+
+.season-place-content h3 {
+    margin: 10px 0 10px;
+
+    color: #a96527;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   AUTUMN TRAVEL TIPS
+   ========================================================= */
+
+.season-tips {
+    padding: 110px 8%;
+
+    background: #1b1714;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.season-tips .section-label {
+    color: #e29b45;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+
+.season-tips > h2 {
+    margin: 0 auto 65px;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+}
+
+
+.season-tips > h2 span {
+    color: #e29b45;
+}
+
+
+.tips-grid {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+.tip-box {
+    padding: 40px 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.tip-box:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255, 255, 255, 0.09);
+}
+
+
+.tip-box > span {
+    display: block;
+
+    color: #e29b45;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+
+.tip-box h3 {
+    margin: 0 0 15px;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+.tip-box p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   AUTUMN FINAL SECTION
+   ========================================================= */
+
+.season-final {
+    position: relative;
+
+    min-height: 550px;
+
+    padding: 100px 8%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.autumn-final {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("hunza-autumn.jpeg");
+}
+
+
+.season-final > div {
+    position: relative;
+
+    z-index: 2;
+
+    color: white;
+}
+
+
+.season-final p:first-child {
+    color: #f0b35b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.season-final h2 {
+    margin: 0 0 35px;
+
+    font-size: clamp(45px, 6vw, 80px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.season-final h2 span {
+    color: #e29b45;
+}
+
+
+/* =========================================================
+   LIGHT BUTTON
+   ========================================================= */
+
+.season-final .light-button {
+    display: inline-block;
+
+    padding: 16px 28px;
+
+    color: #171717;
+
+    background: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.season-final .light-button:hover {
+    transform: translateY(-3px);
+
+    background: #e29b45;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .season-page-hero {
+        min-height: 570px;
+    }
+
+
+    .season-page-intro {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 80px 7%;
+    }
+
+
+    .season-place {
+        grid-template-columns: 1fr;
+    }
+
+
+    .season-place-image {
+        min-height: 430px;
+    }
+
+
+    .season-place-image img {
+        min-height: 430px;
+    }
+
+
+    .season-place-content {
+        min-height: 450px;
+
+        padding: 70px 8%;
+    }
+
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .season-page-hero {
+        min-height: 520px;
+    }
+
+
+    .season-page-content {
+        width: 86%;
+
+        padding-top: 50px;
+    }
+
+
+    .season-page-content h1 {
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .season-page-content > p:last-child {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .season-page-intro {
+        padding: 70px 6%;
+    }
+
+
+    .season-page-intro h2 {
+        font-size: 42px;
+    }
+
+
+    .season-place-image {
+        min-height: 330px;
+    }
+
+
+    .season-place-image img {
+        min-height: 330px;
+    }
+
+
+    .season-place-content {
+        min-height: auto;
+
+        padding: 60px 7%;
+    }
+
+
+    .season-place-content h2 {
+        font-size: 48px;
+    }
+
+
+    .season-place-content p {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+
+    .season-tips {
+        padding: 75px 6%;
+    }
+
+
+    .season-tips > h2 {
+        margin-bottom: 45px;
+    }
+
+
+    .tip-box {
+        padding: 30px 25px;
+    }
+
+
+    .season-final {
+        min-height: 470px;
+
+        padding: 80px 7%;
+    }
+
+
+    .season-final h2 {
+        font-size: 48px;
+    }
+
+}
+/* =========================================================
+   ALPINE QUEST — AUTUMN PAGE ENHANCEMENT
+   DOES NOT CHANGE YOUR HTML TEXT
+   ========================================================= */
+
+
+/*/* =========================================================
+   AUTUMN HERO — PERFECT CENTER
+   ========================================================= */
+
+.autumn-hero {
+    min-height: 650px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.autumn-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(20, 12, 5, 0.45),
+            rgba(20, 12, 5, 0.55)
+        );
+
+    z-index: 1;
+}
+
+.autumn-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+/* HERO LABEL */
+
+.autumn-hero-label {
+    margin-bottom: 22px;
+
+    color: #f2c27b;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-align: center;
+}
+
+
+/* HERO HEADING */
+
+.autumn-hero-content h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    text-align: center;
+}
+
+.autumn-hero-content h1 span {
+    color: #e8a85c;
+}
+
+
+/* SMALL LINE */
+
+.autumn-hero-line {
+    width: 70px;
+    height: 2px;
+
+    margin: 28px auto;
+
+    background: #e8a85c;
+}
+
+
+/* DESCRIPTION */
+
+.autumn-hero-description {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #f3eee8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* BUTTON */
+
+.autumn-hero-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px 25px;
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.autumn-hero-button span {
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+.autumn-hero-button:hover {
+    background: white;
+
+    color: #2b1a0d;
+}
+
+.autumn-hero-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   AUTUMN MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .autumn-hero {
+        min-height: 570px;
+
+        padding: 40px 20px;
+    }
+
+    .autumn-hero-content {
+        width: 90%;
+    }
+
+    .autumn-hero-content h1 {
+        font-size: 58px;
+
+        letter-spacing: -2px;
+    }
+
+    .autumn-hero-label {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .autumn-hero-description {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .autumn-hero {
+        min-height: 520px;
+    }
+
+    .autumn-hero-content h1 {
+        font-size: 47px;
+    }
+
+    .autumn-hero-label {
+        font-size: 9px;
+    }
+
+    .autumn-hero-description {
+        font-size: 13px;
+    }
+}
+
+}
+
+
+
+/* ---------------------------------------------------------
+   AUTUMN INTRODUCTION
+--------------------------------------------------------- */
+
+.season-page-intro {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+
+    padding: 120px max(7%, 40px);
+
+    background: #f7f4ef;
+}
+
+
+.season-page-intro::before {
+    content: "AUTUMN";
+
+    position: absolute;
+    right: 5%;
+    top: 30px;
+
+    font-size: 110px;
+    font-weight: 900;
+
+    letter-spacing: 10px;
+
+    color: rgba(120, 70, 25, 0.045);
+
+    pointer-events: none;
+}
+
+
+.season-page-intro .section-label {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #a25b24;
+}
+
+
+.season-page-intro h2 {
+    margin: 0;
+
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1;
+
+    color: #1c1b19;
+}
+
+
+.season-page-intro h2 span {
+    color: #a85f2a;
+}
+
+
+.season-page-intro > div:last-child {
+    padding-top: 35px;
+}
+
+
+.season-page-intro > div:last-child p {
+    max-width: 620px;
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+    line-height: 1.9;
+
+    color: #55514c;
+}
+
+
+
+/* ---------------------------------------------------------
+   AUTUMN DESTINATION SECTIONS
+--------------------------------------------------------- */
+
+.season-place {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    min-height: 650px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.season-place.reverse {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+
+.season-place-image {
+    position: relative;
+
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+
+.season-place-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(105, 53, 20, 0.08),
+            rgba(0,0,0,0.22)
+        );
+
+    pointer-events: none;
+}
+
+
+.season-place-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+
+.season-place:hover .season-place-image img {
+    transform: scale(1.06);
+
+    filter: saturate(1.08);
+}
+
+
+
+/* content */
+
+.season-place-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px clamp(40px, 7vw, 110px);
+
+    background: #fff;
+
+    position: relative;
+}
+
+
+.season-place-content::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+
+    width: 3px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #bd6d32,
+        transparent
+    );
+}
+
+
+.season-place.reverse .season-place-content {
+    order: 1;
+}
+
+
+.season-place.reverse .season-place-image {
+    order: 2;
+}
+
+
+.season-place-content > span {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #b2672d;
+}
+
+
+.season-place-content h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 0.9;
+
+    letter-spacing: -2px;
+
+    color: #211f1c;
+}
+
+
+.season-place-content > p {
+    max-width: 560px;
+
+    margin: 0 0 25px;
+
+    font-size: 16px;
+    line-height: 1.85;
+
+    color: #5b5751;
+}
+
+
+.season-place-content h3 {
+    margin: 10px 0 12px;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    color: #9d5724;
+}
+
+
+
+/* ---------------------------------------------------------
+   ALTERNATING AUTUMN BACKGROUND
+--------------------------------------------------------- */
+
+.season-place:nth-of-type(even) .season-place-content {
+    background: #f5f1eb;
+}
+
+
+
+/* ---------------------------------------------------------
+   AUTUMN TRAVEL TIPS
+--------------------------------------------------------- */
+
+.season-tips {
+    padding: 120px max(7%, 40px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #241a13,
+            #392419
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.season-tips .section-label {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #e3a05e;
+}
+
+
+.season-tips > h2 {
+    margin: 0 auto 70px;
+
+    max-width: 850px;
+
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.season-tips > h2 span {
+    color: #e5a15e;
+}
+
+
+.tips-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.tip-box {
+    position: relative;
+
+    padding: 45px 35px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    background: rgba(255,255,255,0.045);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.tip-box:hover {
+    transform: translateY(-10px);
+
+    background: rgba(255,255,255,0.09);
+
+    border-color: rgba(227,160,94,0.55);
+}
+
+
+.tip-box > span {
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #e5a15e;
+}
+
+
+.tip-box h3 {
+    margin: 0 0 18px;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+.tip-box p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.68);
+}
+
+
+
+/* ---------------------------------------------------------
+   AUTUMN FINAL CTA
+--------------------------------------------------------- */
+
+.autumn-final {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(30, 16, 8, 0.58),
+            rgba(30, 16, 8, 0.72)
+        ),
+        url("hunza-autumn.jpeg")
+        center/cover no-repeat;
+}
+
+
+.autumn-final::before {
+    content: "";
+
+    position: absolute;
+    inset: 20px;
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    pointer-events: none;
+}
+
+
+.autumn-final > div {
+    position: relative;
+    z-index: 2;
+
+    padding: 70px 30px;
+}
+
+
+.autumn-final p:first-child {
+    margin-bottom: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #efb675;
+}
+
+
+.autumn-final h2 {
+    margin: 0 0 35px;
+
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 0.95;
+
+    color: white;
+
+    letter-spacing: -3px;
+}
+
+
+.autumn-final h2 span {
+    color: #efb675;
+}
+
+
+.autumn-final .light-button {
+    display: inline-block;
+
+    padding: 16px 30px;
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.autumn-final .light-button:hover {
+    background: white;
+
+    color: #2b1b10;
+
+    transform: translateY(-3px);
+}
+
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .season-page-intro {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 90px 7%;
+    }
+
+
+    .season-page-intro > div:last-child {
+        padding-top: 0;
+    }
+
+
+    .season-place,
+    .season-place.reverse {
+        grid-template-columns: 1fr;
+    }
+
+
+    .season-place-image {
+        min-height: 500px;
+    }
+
+
+    .season-place-content {
+        min-height: auto;
+
+        padding: 75px 8%;
+    }
+
+
+    .season-place.reverse .season-place-content {
+        order: 2;
+    }
+
+
+    .season-place.reverse .season-place-image {
+        order: 1;
+    }
+
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+}
+
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .autumn-hero {
+        min-height: 78vh;
+    }
+
+
+    .autumn-hero .season-page-content {
+        width: 88%;
+
+        padding: 80px 0 60px;
+    }
+
+
+    .autumn-hero h1 {
+        font-size: 54px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .autumn-hero .season-page-content > p:last-child {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .season-page-intro {
+        padding: 75px 7%;
+    }
+
+
+    .season-page-intro h2 {
+        font-size: 43px;
+    }
+
+
+    .season-page-intro > div:last-child p {
+        font-size: 15px;
+    }
+
+
+    .season-place-image {
+        min-height: 360px;
+    }
+
+
+    .season-place-content {
+        padding: 60px 8%;
+    }
+
+
+    .season-place-content h2 {
+        font-size: 54px;
+    }
+
+
+    .season-place-content > p {
+        font-size: 15px;
+    }
+
+
+    .season-tips {
+        padding: 80px 7%;
+    }
+
+
+    .season-tips > h2 {
+        margin-bottom: 45px;
+
+        font-size: 43px;
+    }
+
+
+    .tip-box {
+        padding: 35px 25px;
+    }
+
+
+    .autumn-final {
+        min-height: 500px;
+    }
+
+
+    .autumn-final::before {
+        inset: 12px;
+    }
+
+
+    .autumn-final h2 {
+        font-size: 48px;
+    }
+
+}
+/* =========================================================
+   ALPINE QUEST
+   COMPLETE WEBSITE STYLE
+   WINTER PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7f8;
+    color: #17232b;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   2. NAVIGATION BAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    background: rgba(8, 18, 25, 0.96);
+
+    position: relative;
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand > a {
+    display: block;
+}
+
+.brand img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+
+/* BRAND TEXT */
+
+.brand-text h2 {
+    color: white;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.brand-text p {
+    color: #b8c7ce;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-top: 2px;
+}
+
+
+/* NAVIGATION */
+
+.navbar nav {
+    height: 100%;
+}
+
+.navbar nav > ul {
+    list-style: none;
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+}
+
+.navbar nav > ul > li {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.navbar nav > ul > li > a {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 17px;
+
+    color: #e9eef0;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav > ul > li > a:hover,
+.navbar nav > ul > li > a.active {
+    color: #7ee7ee;
+}
+
+.navbar nav > ul > li > a span {
+    margin-left: 6px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   3. DROPDOWN MENU
+   ========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style: none;
+
+    position: absolute;
+
+    top: 82px;
+
+    left: 0;
+
+    min-width: 235px;
+
+    background: #101d25;
+
+    border-top: 2px solid #67dce4;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+.dropdown:hover > .dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+
+    padding: 14px 18px;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background: #18343d;
+
+    color: #75e4eb;
+
+    padding-left: 24px;
+}
+
+
+/* =========================================================
+   4. WINTER HERO
+   EVERYTHING CENTERED
+   ========================================================= */
+
+.season-page-hero.winter-hero {
+
+    position: relative;
+
+    min-height: 650px;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 15, 23, 0.50),
+            rgba(3, 15, 23, 0.50)
+        ),
+        url("baltistan2.jpeg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    overflow: hidden;
+}
+
+
+/* HERO OVERLAY */
+
+.season-page-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.10),
+            transparent 50%,
+            rgba(0, 0, 0, 0.40)
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.season-page-content {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0;
+
+    padding: 0;
+
+    color: white;
+
+    text-align: center;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* HERO LABEL */
+
+.season-page-content .section-label {
+
+    width: 100%;
+
+    color: #a5edf2;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-align: center;
+
+    margin: 0 0 22px;
+}
+
+
+/* HERO HEADING */
+
+.season-page-content h1 {
+
+    width: 100%;
+
+    color: white;
+
+    font-size: clamp(65px, 9vw, 115px);
+
+    line-height: 0.90;
+
+    font-weight: 800;
+
+    letter-spacing: -4px;
+
+    text-align: center;
+
+    margin: 0 0 28px;
+}
+
+.season-page-content h1 span {
+    color: #8de3eb;
+}
+
+
+/* HERO DESCRIPTION */
+
+.season-page-content > p:last-child {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #edf7f8;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   5. WINTER INTRO
+   ELEGANT + CENTERED
+   ========================================================= */
+
+.season-page-intro {
+
+    width: 100%;
+
+    min-height: 480px;
+
+    padding: 100px 8%;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 28px;
+}
+
+
+/* INTRO LABEL */
+
+.season-page-intro .section-label {
+
+    color: #4dabb5;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+/* INTRO HEADING */
+
+.season-page-intro h2 {
+
+    color: #17262e;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+
+    text-align: center;
+
+    margin: 0;
+}
+
+.season-page-intro h2 span {
+    color: #65bfc8;
+}
+
+
+/* INTRO TEXT */
+
+.season-page-intro > div:last-child {
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.season-page-intro > div:last-child p {
+
+    color: #5c6970;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+.season-page-intro > div:last-child p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   6. WINTER DESTINATION SECTION
+   ========================================================= */
+
+.winter-destination-grid {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 100px 6%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   DESTINATION CARD
+   SAME STYLE AS MOUNTAIN CARDS
+   ========================================================= */
+
+.winter-destination-card {
+
+    position: relative;
+
+    height: 520px;
+
+    overflow: hidden;
+
+    background: #15252d;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 12px 30px rgba(19, 42, 50, 0.10);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* CARD HOVER */
+
+.winter-destination-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(19, 42, 50, 0.18);
+}
+
+
+/* CARD IMAGE */
+
+.winter-destination-card img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+/* IMAGE ZOOM */
+
+.winter-destination-card:hover img {
+
+    transform: scale(1.07);
+}
+
+
+/* DARK OVERLAY */
+
+.winter-destination-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 15%,
+            rgba(0, 0, 0, 0.18) 35%,
+            rgba(0, 0, 0, 0.88) 100%
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DESTINATION INFORMATION
+   ========================================================= */
+
+.winter-destination-info {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 35px;
+
+    right: 35px;
+
+    bottom: 30px;
+
+    color: white;
+}
+
+
+/* SMALL LABEL */
+
+.winter-destination-info small {
+
+    display: block;
+
+    color: #9ce8ee;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+/* DESTINATION TITLE */
+
+.winter-destination-info h2 {
+
+    color: white;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin: 0 0 13px;
+}
+
+
+/* DESCRIPTION */
+
+.winter-destination-info p {
+
+    color: #e3ebed;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    margin: 0 0 12px;
+}
+
+
+/* WHY GO */
+
+.winter-destination-info h4 {
+
+    color: #a4e8ed;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-top: 12px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   7. BALTISTAN FULL WIDTH
+   ========================================================= */
+
+.winter-destination-card.baltistan-card {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    height: 600px;
+}
+
+
+/* BALTISTAN CENTER CONTENT */
+
+.baltistan-card .winter-destination-info {
+
+    left: 12%;
+
+    right: 12%;
+
+    bottom: 50%;
+
+    transform: translateY(50%);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* BALTISTAN LABEL */
+
+.baltistan-card .winter-destination-info small {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+/* BALTISTAN TITLE */
+
+.baltistan-card .winter-destination-info h2 {
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin: 0 0 20px;
+}
+
+
+/* BALTISTAN DESCRIPTION */
+
+.baltistan-card .winter-destination-info p {
+
+    max-width: 720px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   8. MOUNTAIN RANGES
+   ========================================================= */
+
+.winter-mountains {
+
+    padding: 110px 8%;
+
+    background: #ffffff;
+}
+
+
+/* MOUNTAIN HEADING */
+
+.winter-mountains-heading {
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.winter-mountains-heading .section-label {
+
+    color: #56adb6;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.winter-mountains-heading h2 {
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    color: #17262e;
+
+    letter-spacing: -2px;
+}
+
+.winter-mountains-heading h2 span {
+    color: #62bdc6;
+}
+
+
+/* MOUNTAIN GRID */
+
+.winter-mountain-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 28px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* MOUNTAIN CARD */
+
+.winter-mountain-card {
+
+    position: relative;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    background: #15252d;
+
+    border-radius: 5px;
+}
+
+.winter-mountain-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.winter-mountain-card:hover img {
+    transform: scale(1.07);
+}
+
+.winter-mountain-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0, 0, 0, 0.78)
+        );
+}
+
+
+/* MOUNTAIN INFO */
+
+.winter-mountain-info {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 35px;
+
+    right: 35px;
+
+    bottom: 30px;
+
+    color: white;
+}
+
+.winter-mountain-info small {
+
+    color: #9ce8ee;
+
+    letter-spacing: 2px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.winter-mountain-info h3 {
+
+    font-size: 34px;
+
+    margin-top: 7px;
+
+    margin-bottom: 10px;
+}
+
+.winter-mountain-info p {
+
+    color: #e3ebed;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   9. WINTER TRAVEL TIPS
+   ========================================================= */
+
+.season-tips {
+
+    padding: 110px 8%;
+
+    background: #e8f1f4;
+
+    text-align: center;
+}
+
+.season-tips > .section-label {
+
+    color: #4eaab4;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.season-tips > h2 {
+
+    color: #17262e;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    margin-bottom: 60px;
+
+    letter-spacing: -2px;
+}
+
+.season-tips > h2 span {
+    color: #5dbac3;
+}
+
+
+/* TIPS GRID */
+
+.tips-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* TIP BOX */
+
+.tip-box {
+
+    background: white;
+
+    padding: 38px 30px;
+
+    text-align: left;
+
+    border: 1px solid #dce7ea;
+
+    transition: 0.3s ease;
+}
+
+.tip-box:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(25, 55, 65, 0.12);
+}
+
+.tip-box > span {
+
+    display: block;
+
+    color: #61b9c2;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.tip-box h3 {
+
+    color: #1c3039;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.tip-box p {
+
+    color: #657278;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   10. FINAL CTA
+   ========================================================= */
+
+.season-final.winter-final {
+
+    min-height: 500px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 20, 28, 0.68),
+            rgba(5, 20, 28, 0.68)
+        ),
+        url("mountain.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+.season-final.winter-final > div {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 40px 20px;
+}
+
+
+.season-final.winter-final > div > p {
+
+    color: #9be7ed;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+
+.season-final.winter-final h2 {
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 30px;
+}
+
+.season-final.winter-final h2 span {
+    color: #8ce1e8;
+}
+
+
+/* =========================================================
+   11. BUTTONS
+   ========================================================= */
+
+.light-button {
+
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: white;
+
+    color: #162832;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.light-button:hover {
+
+    background: #77dce4;
+
+    color: #092027;
+
+    transform: translateY(-3px);
+}
+
+
+.dark-button {
+
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: #14262e;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.dark-button:hover {
+
+    background: #54bfc8;
+
+    transform: translateY(-3px);
+}
+
+
+.discover-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 23px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.discover-btn span {
+
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+.discover-btn:hover {
+
+    background: white;
+
+    color: #13252d;
+}
+
+.discover-btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+
+footer {
+
+    background: #0c171d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 70px 20px 35px;
+}
+
+footer h2 {
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+footer p {
+
+    color: #9caeb5;
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+}
+
+.footer-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #5cbfc8;
+
+    margin: 0 auto 25px;
+}
+
+footer small {
+
+    color: #6e7d83;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   13. TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+
+    /* NAV */
+
+    .navbar {
+
+        padding: 0 25px;
+    }
+
+    .brand-text h2 {
+        font-size: 16px;
+    }
+
+    .brand-text p {
+        font-size: 8px;
+    }
+
+    .navbar nav > ul > li > a {
+
+        padding: 0 9px;
+
+        font-size: 10px;
+    }
+
+
+    /* HERO */
+
+    .season-page-hero.winter-hero {
+
+        min-height: 600px;
+    }
+
+
+    /* DESTINATIONS */
+
+    .winter-destination-grid {
+
+        padding: 80px 5%;
+
+        gap: 22px;
+    }
+
+    .winter-destination-card {
+
+        height: 500px;
+    }
+
+
+    /* MOUNTAINS */
+
+    .winter-mountain-grid {
+
+        gap: 20px;
+    }
+
+
+    /* TIPS */
+
+    .tips-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   14. MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+
+    /* NAVIGATION */
+
+    .navbar {
+
+        height: auto;
+
+        min-height: 80px;
+
+        padding: 15px 18px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .brand {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .navbar nav {
+
+        width: 100%;
+
+        height: auto;
+    }
+
+
+    .navbar nav > ul {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        height: auto;
+    }
+
+
+    .navbar nav > ul > li {
+
+        height: 42px;
+    }
+
+
+    .navbar nav > ul > li > a {
+
+        height: 42px;
+
+        padding: 0 8px;
+
+        font-size: 9px;
+    }
+
+
+    /* DROPDOWN */
+
+    .dropdown-menu {
+
+        top: 42px;
+
+        left: 50%;
+
+        transform: translate(-50%, 10px);
+    }
+
+
+    .dropdown:hover > .dropdown-menu {
+
+        transform: translate(-50%, 0);
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .season-page-hero.winter-hero {
+
+        min-height: 570px;
+
+        background-position: center center;
+    }
+
+
+    .season-page-content {
+
+        width: 90%;
+
+        top: 50%;
+
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+
+    .season-page-content .section-label {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .season-page-content h1 {
+
+        font-size: 58px;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .season-page-content > p:last-child {
+
+        max-width: 550px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .season-page-intro {
+
+        min-height: 430px;
+
+        padding: 75px 7%;
+
+        gap: 25px;
+    }
+
+
+    .season-page-intro h2 {
+
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .season-page-intro > div:last-child {
+
+        max-width: 600px;
+    }
+
+
+    .season-page-intro > div:last-child p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       DESTINATION CARDS
+       ===================================================== */
+
+    .winter-destination-grid {
+
+        grid-template-columns: 1fr;
+
+        padding: 70px 6%;
+
+        gap: 25px;
+    }
+
+
+    .winter-destination-card {
+
+        width: 100%;
+
+        height: 500px;
+    }
+
+
+    .winter-destination-info {
+
+        left: 25px;
+
+        right: 25px;
+
+        bottom: 25px;
+    }
+
+
+    .winter-destination-info h2 {
+
+        font-size: 35px;
+    }
+
+
+    .winter-destination-info p {
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       BALTISTAN
+       ===================================================== */
+
+    .winter-destination-card.baltistan-card {
+
+        grid-column: auto;
+
+        height: 570px;
+    }
+
+
+    .baltistan-card .winter-destination-info {
+
+        left: 25px;
+
+        right: 25px;
+
+        bottom: 50%;
+
+        transform: translateY(50%);
+
+        text-align: center;
+    }
+
+
+    .baltistan-card .winter-destination-info h2 {
+
+        font-size: 55px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .baltistan-card .winter-destination-info p {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       MOUNTAINS
+       ===================================================== */
+
+    .winter-mountains {
+
+        padding: 75px 6%;
+    }
+
+
+    .winter-mountain-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .winter-mountain-card {
+
+        height: 430px;
+    }
+
+
+    /* =====================================================
+       TIPS
+       ===================================================== */
+
+    .season-tips {
+
+        padding: 75px 6%;
+    }
+
+
+    .tips-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       FINAL CTA
+       ===================================================== */
+
+    .season-final.winter-final {
+
+        min-height: 450px;
+    }
+
+
+    .season-final.winter-final h2 {
+
+        font-size: 55px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        padding: 55px 18px 30px;
+    }
+
+}
+
+
+/* =========================================================
+   15. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+
+    /* LOGO */
+
+    .brand img {
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+
+    .brand-text h2 {
+
+        font-size: 14px;
+    }
+
+
+    .brand-text p {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* NAV */
+
+    .navbar nav > ul > li > a {
+
+        padding: 0 6px;
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .dropdown-menu {
+
+        min-width: 205px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .season-page-hero.winter-hero {
+
+        min-height: 520px;
+    }
+
+
+    .season-page-content {
+
+        width: 92%;
+    }
+
+
+    .season-page-content .section-label {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .season-page-content h1 {
+
+        font-size: 47px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .season-page-content > p:last-child {
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .season-page-intro {
+
+        padding: 65px 7%;
+
+        min-height: 400px;
+    }
+
+
+    .season-page-intro h2 {
+
+        font-size: 41px;
+    }
+
+
+    /* =====================================================
+       DESTINATION CARDS
+       ===================================================== */
+
+    .winter-destination-grid {
+
+        padding: 55px 5%;
+    }
+
+
+    .winter-destination-card {
+
+        height: 450px;
+    }
+
+
+    .winter-destination-info {
+
+        left: 22px;
+
+        right: 22px;
+
+        bottom: 22px;
+    }
+
+
+    .winter-destination-info h2 {
+
+        font-size: 31px;
+    }
+
+
+    .winter-destination-info p {
+
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       BALTISTAN
+       ===================================================== */
+
+    .winter-destination-card.baltistan-card {
+
+        height: 500px;
+    }
+
+
+    .baltistan-card .winter-destination-info {
+
+        left: 20px;
+
+        right: 20px;
+    }
+
+
+    .baltistan-card .winter-destination-info h2 {
+
+        font-size: 45px;
+    }
+
+
+    .baltistan-card .winter-destination-info p {
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       MOUNTAINS
+       ===================================================== */
+
+    .winter-mountain-card {
+
+        height: 390px;
+    }
+
+
+    .winter-mountain-info {
+
+        left: 25px;
+
+        right: 25px;
+
+        bottom: 25px;
+    }
+
+
+    .winter-mountain-info h3 {
+
+        font-size: 29px;
+    }
+
+
+    /* =====================================================
+       TIPS
+       ===================================================== */
+
+    .season-tips > h2 {
+
+        font-size: 42px;
+    }
+
+
+    /* =====================================================
+       FINAL CTA
+       ===================================================== */
+
+    .season-final.winter-final {
+
+        min-height: 420px;
+    }
+
+
+    .season-final.winter-final h2 {
+
+        font-size: 47px;
+    }
+
+
+    .season-final.winter-final > div > p {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+}
+
+
+/* =========================================================
+   16. IMAGE SAFETY
+   ========================================================= */
+
+.winter-destination-card img,
+.winter-mountain-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   END OF ALPINE QUEST WINTER STYLE
+   ========================================================= */
+/* =========================================================
+   ALPINE QUEST
+   EXPLORE PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL EXPLORE PAGE
+   ========================================================= */
+
+.explore-hero,
+.explore-intro,
+.explore-destinations,
+.explore-culture,
+.explore-heritage,
+.explore-mountain-culture,
+.explore-landscapes,
+.explore-hospitality,
+.explore-final {
+    box-sizing: border-box;
+}
+
+.explore-hero *,
+.explore-intro *,
+.explore-destinations *,
+.explore-culture *,
+.explore-heritage *,
+.explore-mountain-culture *,
+.explore-landscapes *,
+.explore-hospitality *,
+.explore-final * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EXPLORE HERO
+   ========================================================= */
+
+.explore-hero {
+    position: relative;
+    width: 100%;
+    min-height: 99vh;
+
+    background-image: url("explore.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* dark overlay */
+
+.explore-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.60)
+        );
+
+    z-index: 1;
+}
+
+
+/* HERO CONTENT
+   IMPORTANT:
+   This puts EVERYTHING in the middle.
+*/
+
+.explore-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* small label */
+
+.explore-label {
+    margin: 0 0 100px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.90);
+}
+
+
+/* HERO HEADING */
+
+.explore-hero-content h1 {
+    margin: 0;
+
+    font-size: clamp(48px, 7vw, 92px);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.45);
+}
+
+.explore-hero-content h1 span {
+    display: block;
+
+    font-weight: 300;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+}
+
+
+/* line */
+
+.explore-line {
+    width: 90px;
+    height: 2px;
+
+    margin: 28px auto;
+
+    background: white;
+
+    opacity: 0.85;
+}
+
+
+/* hero paragraph */
+
+.explore-hero-text {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+    padding: 0px 0px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    text-align: center;
+}
+
+
+/* hero button */
+
+.explore-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 14px 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.explore-button:hover {
+    background: white;
+
+    color: #111;
+
+    transform: translateY(-3px);
+}
+
+.explore-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.explore-intro {
+    width: 100%;
+
+    padding: 120px 8%;
+
+    text-align: center;
+
+    background: #f7f8f6;
+}
+
+
+.explore-intro .section-label,
+.explore-heading .section-label,
+.explore-culture-heading .section-label,
+.heritage-content .section-label,
+.mountain-culture-content .section-label,
+.landscape-heading .section-label,
+.hospitality-content .section-label {
+    margin: 0 0 18px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #718078;
+}
+
+
+.explore-intro h2,
+.explore-heading h2,
+.explore-culture-heading h2,
+.heritage-content h2,
+.mountain-culture-content h2,
+.landscape-heading h2,
+.hospitality-content h2 {
+    margin: 0;
+
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    color: #182522;
+}
+
+
+.explore-intro h2 span,
+.explore-heading h2 span,
+.explore-culture-heading h2 span,
+.heritage-content h2 span,
+.mountain-culture-content h2 span,
+.landscape-heading h2 span,
+.hospitality-content h2 span {
+    font-weight: 300;
+
+    font-style: italic;
+}
+
+
+.explore-intro > p:not(.section-label) {
+    max-width: 800px;
+
+    margin: 30px auto 0;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #66736e;
+}
+
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.explore-destinations {
+    width: 100%;
+
+    padding: 120px 7%;
+
+    background: #ffffff;
+}
+
+
+.explore-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+/* DESTINATION GRID */
+
+.explore-grid {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px;
+}
+
+
+/* DESTINATION CARD */
+
+.explore-card {
+    background: #f7f8f6;
+
+    border: 1px solid #e5e9e6;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.explore-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* IMAGE */
+
+.explore-card-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 330px;
+
+    overflow: hidden;
+}
+
+
+.explore-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.explore-card:hover .explore-card-image img {
+    transform: scale(1.06);
+}
+
+
+/* NUMBER */
+
+.explore-number {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #17231f;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* CARD CONTENT */
+
+.explore-card-content {
+    padding: 32px;
+}
+
+
+.explore-card-content small {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #78867f;
+}
+
+
+.explore-card-content h3 {
+    margin: 0 0 18px;
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+
+    color: #182522;
+}
+
+
+.explore-card-content p {
+    margin: 0 0 16px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #65716d;
+}
+
+
+.explore-card-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CULTURE
+   ========================================================= */
+
+.explore-culture {
+    width: 100%;
+
+    padding: 120px 7%;
+
+    background: #f3f5f2;
+}
+
+
+.explore-culture-heading {
+    text-align: center;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+.explore-culture-intro {
+    max-width: 850px;
+
+    margin: 35px auto 65px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #68736f;
+}
+
+
+/* CULTURE GRID */
+
+.culture-grid {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px;
+}
+
+
+/* CULTURE CARD */
+
+.culture-card {
+    background: white;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e6e3;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.culture-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+
+/* CULTURE IMAGE */
+
+.culture-image {
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.culture-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+.culture-card:hover .culture-image img {
+    transform: scale(1.06);
+}
+
+
+/* CULTURE CONTENT */
+
+.culture-content {
+    padding: 30px;
+}
+
+
+.culture-content > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #87928d;
+}
+
+
+.culture-content h3 {
+    margin: 0 0 15px;
+
+    font-size: 25px;
+
+    color: #182522;
+}
+
+
+.culture-content p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #68736f;
+}
+
+
+/* =========================================================
+   HERITAGE
+   ========================================================= */
+
+.explore-heritage {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+
+    background: #182522;
+}
+
+
+/* heritage image */
+
+.heritage-image {
+    min-height: 550px;
+
+    overflow: hidden;
+}
+
+
+.heritage-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* heritage text */
+
+.heritage-content {
+    padding: 80px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    color: white;
+}
+
+
+.heritage-content .section-label {
+    color: #aebbb5;
+}
+
+
+.heritage-content h2 {
+    color: white;
+
+    margin-bottom: 30px;
+}
+
+
+.heritage-content > p {
+    max-width: 580px;
+
+    margin: 0 0 18px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #c8d0cc;
+}
+
+
+.heritage-content h3 {
+    margin: 15px 0 10px;
+
+    font-size: 22px;
+
+    letter-spacing: 2px;
+
+    color: white;
+}
+
+
+/* DARK BUTTON */
+
+.dark-button {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    padding: 14px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.dark-button:hover {
+    background: white;
+
+    color: #182522;
+}
+
+
+/* =========================================================
+   MOUNTAIN CULTURE
+   ========================================================= */
+
+.explore-mountain-culture {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 600px;
+
+    background: #f6f7f5;
+}
+
+
+.mountain-culture-content {
+    padding: 80px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.mountain-culture-content h2 {
+    margin-bottom: 30px;
+}
+
+
+.mountain-culture-content > p:not(.section-label) {
+    max-width: 600px;
+
+    margin: 0 0 20px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #697570;
+}
+
+
+.mountain-culture-image {
+    min-height: 550px;
+
+    overflow: hidden;
+}
+
+
+.mountain-culture-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   LANDSCAPES
+   ========================================================= */
+
+.explore-landscapes {
+    width: 100%;
+
+    padding: 120px 7%;
+
+    background: white;
+}
+
+
+.landscape-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.landscape-grid {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+.landscape-card {
+    position: relative;
+
+    height: 390px;
+
+    overflow: hidden;
+
+    background: #182522;
+}
+
+
+.landscape-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.landscape-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* landscape dark overlay */
+
+.landscape-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.05) 65%
+        );
+}
+
+
+/* landscape text */
+
+.landscape-card > div {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+
+    color: white;
+}
+
+
+.landscape-card small {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.landscape-card h3 {
+    margin: 8px 0;
+
+    font-size: 25px;
+
+    letter-spacing: 2px;
+}
+
+
+.landscape-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================================
+   HOSPITALITY
+   ========================================================= */
+
+.explore-hospitality {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 600px;
+
+    background: #f4f6f4;
+}
+
+
+.hospitality-image {
+    min-height: 550px;
+
+    overflow: hidden;
+}
+
+
+.hospitality-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.hospitality-content {
+    padding: 80px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.hospitality-content h2 {
+    margin-bottom: 30px;
+}
+
+
+.hospitality-content > p:not(.section-label) {
+    max-width: 600px;
+
+    margin: 0 0 18px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #697570;
+}
+
+
+/* =========================================================
+   FINAL SECTION
+   ========================================================= */
+
+.explore-final {
+    width: 100%;
+
+    min-height: 520px;
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(16, 31, 27, 0.82),
+            rgba(16, 31, 27, 0.88)
+        ),
+        url("himaliyas2.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+
+.explore-final > div {
+    max-width: 850px;
+}
+
+
+.explore-final > div > p:first-child {
+    margin: 0 0 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.explore-final h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+}
+
+
+.explore-final h2 span {
+    font-weight: 300;
+
+    font-style: italic;
+}
+
+
+.explore-final-text {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* FINAL BUTTON */
+
+.light-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.light-button:hover {
+    background: white;
+
+    color: #182522;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    padding: 55px 20px 35px;
+
+    text-align: center;
+
+    background: #111c19;
+
+    color: white;
+}
+
+
+footer h2 {
+    margin: 0 0 10px;
+
+    font-size: 25px;
+
+    letter-spacing: 3px;
+}
+
+
+footer p {
+    margin: 0;
+
+    color: #b9c2be;
+
+    font-size: 14px;
+}
+
+
+.footer-line {
+    width: 70px;
+
+    height: 1px;
+
+    margin: 25px auto;
+
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+footer small {
+    color: #89938f;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .landscape-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .explore-heritage,
+    .explore-mountain-culture,
+    .explore-hospitality {
+        grid-template-columns: 1fr;
+    }
+
+
+    .heritage-image,
+    .mountain-culture-image,
+    .hospitality-image {
+        min-height: 450px;
+    }
+
+
+    .heritage-content,
+    .mountain-culture-content,
+    .hospitality-content {
+        padding: 70px 8%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .explore-hero {
+        min-height: 80vh;
+    }
+
+
+    .explore-hero-content {
+        width: 92%;
+    }
+
+
+    .explore-hero-content h1 {
+        font-size: 45px;
+
+        line-height: 1;
+    }
+
+
+    .explore-hero-text {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .explore-intro,
+    .explore-destinations,
+    .explore-culture,
+    .explore-landscapes {
+        padding: 80px 6%;
+    }
+
+
+    .explore-intro h2,
+    .explore-heading h2,
+    .explore-culture-heading h2,
+    .heritage-content h2,
+    .mountain-culture-content h2,
+    .landscape-heading h2,
+    .hospitality-content h2 {
+        font-size: 38px;
+    }
+
+
+    .explore-card-image {
+        height: 260px;
+    }
+
+
+    .explore-card-content {
+        padding: 25px;
+    }
+
+
+    .culture-image {
+        height: 250px;
+    }
+
+
+    .landscape-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .landscape-card {
+        height: 350px;
+    }
+
+
+    .heritage-image,
+    .mountain-culture-image,
+    .hospitality-image {
+        min-height: 350px;
+    }
+
+
+    .heritage-content,
+    .mountain-culture-content,
+    .hospitality-content {
+        padding: 60px 7%;
+    }
+
+
+    .explore-final {
+        min-height: 450px;
+
+        padding: 80px 6%;
+    }
+
+
+    .explore-final h2 {
+        font-size: 45px;
+    }
+
+}
+```css
+/* =========================================================
+   ALPINE QUEST — CONTACT PAGE
+   FINAL CONTACT DESIGN
+========================================================= */
+
+
+/* MAIN CONTACT BACKGROUND */
+
+.contact-page {
+    position: relative !important;
+
+    width: 100% !important;
+
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    padding: 120px 6% 80px !important;
+
+    box-sizing: border-box !important;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 25, 35, 0.55),
+            rgba(0, 25, 35, 0.65)
+        ),
+        url("chitralsum.jpeg") !important;
+
+    background-size: cover !important;
+
+    background-position: center center !important;
+
+    background-repeat: no-repeat !important;
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+}
+
+
+/* CONTACT BOX */
+
+.contact-wrapper {
+    position: relative !important;
+
+    z-index: 2 !important;
+
+    width: 100% !important;
+
+    max-width: 1150px !important;
+
+    min-height: 650px !important;
+
+    margin: 0 auto !important;
+
+    display: grid !important;
+
+    grid-template-columns: 45% 55% !important;
+
+    background: rgba(255, 255, 255, 0.97) !important;
+
+    border-radius: 16px !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.30) !important;
+}
+
+
+/* =========================================================
+   LEFT CONTACT AREA
+========================================================= */
+
+.contact-left {
+    position: relative !important;
+
+    width: 100% !important;
+
+    min-height: 650px !important;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 35, 45, 0.45),
+            rgba(0, 25, 35, 0.70)
+        ),
+        url("hunza summer.jpeg") !important;
+
+    background-size: cover !important;
+
+    background-position: center !important;
+
+    background-repeat: no-repeat !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    color: white !important;
+}
+
+
+/* LEFT CONTENT */
+
+.contact-overlay {
+    width: 100% !important;
+
+    padding: 150px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* TITLE */
+
+.contact-overlay h1 {
+    margin: 0 0 20px !important;
+
+    font-size: 48px !important;
+
+    line-height: 1.1 !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 2px !important;
+
+    color: #ffffff !important;
+}
+
+
+/* DESCRIPTION */
+
+.contact-intro {
+    max-width: 400px !important;
+
+    margin: 0 0 45px !important;
+
+    font-size: 16px !important;
+
+    line-height: 1.8 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* CONTACT ITEM */
+
+.contact-item {
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 18px !important;
+
+    margin-bottom: 28px !important;
+}
+
+
+/* ICON */
+
+.contact-icon {
+    width: 48px !important;
+
+    height: 48px !important;
+
+    min-width: 48px !important;
+
+    border: 1px solid #ffffff !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+}
+
+
+/* LABEL */
+
+.contact-item h3 {
+    margin: 0 0 5px !important;
+
+    font-size: 12px !important;
+
+    letter-spacing: 2px !important;
+
+    color: #ffffff !important;
+}
+
+
+/* TEXT */
+
+.contact-item p {
+    margin: 0 !important;
+
+    font-size: 15px !important;
+
+    color: #ffffff !important;
+}
+
+
+/* SOCIAL */
+
+.social-area {
+    margin-top: 40px !important;
+}
+
+
+.social-area h3 {
+    margin: 0 0 18px !important;
+
+    font-size: 12px !important;
+
+    letter-spacing: 2px !important;
+
+    color: #ffffff !important;
+}
+
+
+.social-icons {
+    display: flex !important;
+
+    gap: 12px !important;
+}
+
+
+.social-icons a {
+    width: 42px !important;
+
+    height: 42px !important;
+
+    border: 1px solid #ffffff !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    transition: 0.3s ease !important;
+}
+
+
+.social-icons a:hover {
+    background: #ffffff !important;
+
+    color: #126b78 !important;
+
+    transform: translateY(-4px) !important;
+}
+
+
+/* =========================================================
+   RIGHT FORM
+========================================================= */
+
+.contact-right {
+    width: 100% !important;
+
+    min-height: 650px !important;
+
+    padding: 55px 60px !important;
+
+    box-sizing: border-box !important;
+
+    background: rgba(255, 255, 255, 0.98) !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    justify-content: center !important;
+}
+
+
+.contact-right h2 {
+    margin: 0 0 10px !important;
+
+    font-size: 32px !important;
+
+    color: #173f46 !important;
+}
+
+
+.form-description {
+    margin: 0 0 30px !important;
+
+    color: #777777 !important;
+
+    font-size: 14px !important;
+}
+
+
+/* FORM */
+
+.contact-right form {
+    width: 100% !important;
+}
+
+
+/* NAME ROW */
+
+.name-row {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 18px !important;
+}
+
+
+/* INPUT GROUP */
+
+.input-group {
+    width: 100% !important;
+
+    margin-bottom: 18px !important;
+}
+
+
+.input-group label {
+    display: block !important;
+
+    margin-bottom: 7px !important;
+
+    font-size: 13px !important;
+
+    font-weight: 600 !important;
+
+    color: #333333 !important;
+}
+
+
+/* INPUTS */
+
+.input-group input,
+.input-group textarea {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    padding: 13px 15px !important;
+
+    border: 1px solid #d5dddf !important;
+
+    border-radius: 6px !important;
+
+    background: #fafcfc !important;
+
+    outline: none !important;
+
+    font-family: inherit !important;
+
+    font-size: 14px !important;
+}
+
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #138493 !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 0 0 3px rgba(19, 132, 147, 0.10) !important;
+}
+
+
+.input-group textarea {
+    min-height: 120px !important;
+
+    resize: vertical !important;
+}
+
+
+/* PRIVACY */
+
+.privacy-check {
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    margin: 4px 0 24px !important;
+
+    font-size: 13px !important;
+
+    color: #666666 !important;
+}
+
+
+.privacy-check input {
+    width: 16px !important;
+
+    height: 16px !important;
+
+    accent-color: #138493 !important;
+}
+
+
+.privacy-check a {
+    color: #138493 !important;
+
+    text-decoration: none !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* BUTTON */
+
+.contact-submit {
+    width: 100% !important;
+
+    height: 50px !important;
+
+    border: none !important;
+
+    border-radius: 6px !important;
+
+    background: linear-gradient(
+        135deg,
+        #116d7b,
+        #1599aa
+    ) !important;
+
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 1px !important;
+
+    cursor: pointer !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 12px !important;
+
+    transition: 0.3s ease !important;
+}
+
+
+.contact-submit:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.20) !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-page {
+        padding: 100px 30px 60px !important;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-left {
+        min-height: 500px !important;
+    }
+
+    .contact-right {
+        min-height: auto !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-page {
+        padding: 80px 15px 40px !important;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-overlay {
+        padding: 45px 30px !important;
+    }
+
+    .contact-overlay h1 {
+        font-size: 36px !important;
+    }
+
+    .contact-right {
+        padding: 40px 25px !important;
+    }
+
+    .name-row {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+```
+/* =========================================================
+   =========================================================
+   ALPINE QUEST
+   NEWS PAGE CSS
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef3f1;
+    color: #173033;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION BAR
+   ========================================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 9999;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 22, 25, 0.96),
+        rgba(4, 22, 25, 0.45)
+    );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand a {
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid white;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.brand-text h2 {
+    color: white;
+
+    font-size: 19px;
+
+    letter-spacing: 3px;
+}
+
+.brand-text p {
+    margin-top: 5px;
+
+    color: #c8d9d5;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+.navbar nav {
+    height: 90px;
+}
+
+.navbar nav ul {
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    list-style: none;
+}
+
+.navbar nav ul li {
+    position: relative;
+}
+
+.navbar nav ul li > a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    height: 90px;
+
+    padding: 0 17px;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav ul li > a:hover,
+.navbar nav ul li > a.active {
+    color: #d7b878;
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.navbar nav ul li.dropdown {
+    position: relative;
+}
+
+
+/* Dropdown menu hidden */
+
+.navbar nav ul li.dropdown > .dropdown-menu {
+    position: absolute;
+
+    top: 90px;
+    left: 0;
+
+    width: 250px;
+
+    display: none;
+
+    height: auto;
+
+    padding: 8px 0;
+
+    margin: 0;
+
+    background: #071b1e;
+
+    border-top: 2px solid #d7b878;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+    list-style: none;
+
+    z-index: 10000;
+}
+
+
+/* Show dropdown */
+
+.navbar nav ul li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+
+/* Dropdown list items */
+
+.navbar nav ul li.dropdown > .dropdown-menu li {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+/* Dropdown links */
+
+.navbar nav ul li.dropdown > .dropdown-menu li a {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 15px 20px;
+
+    color: white;
+
+    background: transparent;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* Dropdown hover */
+
+.navbar nav ul li.dropdown > .dropdown-menu li a:hover {
+    color: #102b2f;
+
+    background: #d7b878;
+}
+
+
+/* Arrow */
+
+.navbar nav ul li.dropdown > a span {
+    font-size: 15px;
+
+    line-height: 1;
+
+    transition: 0.3s ease;news
+
+}
+
+.navbar nav ul li.dropdown:hover > a span {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   NEWS HERO
+========================================================= */
+
+.news-hero {
+    position: relative;
+
+    min-height: 650px;
+
+    margin-top: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background-image:
+        url("travel.jpeg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+}
+
+
+.news-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.72)
+        );
+}
+
+
+.news-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.news-small-title {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.news-hero h1 {
+    margin: 0 0 20px;
+
+    color: white;
+
+    font-size: clamp(48px, 7vw, 82px);
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.50);
+}
+
+
+.news-hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: white;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   NEWS INTRODUCTION
+========================================================= */
+
+.news-introduction {
+    width: 90%;
+
+    max-width: 850px;
+
+    margin: 90px auto 55px;
+
+    text-align: center;
+}
+
+
+.news-section-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #6a11cb;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.news-introduction h2 {
+    margin: 0 0 20px;
+
+    color: #222;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+
+.news-introduction h2::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 4px;
+
+    margin: 18px auto 0;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00c6ff,
+            #7b2cff
+        );
+}
+
+
+.news-introduction p {
+    margin: 25px auto 0;
+
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   NEWS GRID
+========================================================= */
+
+.news-main {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto 90px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   NEWS CARD
+========================================================= */
+
+.news-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.news-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   NEWS IMAGE
+========================================================= */
+
+.news-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 240px;
+
+    overflow: hidden;
+}
+
+
+.news-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.news-card:hover .news-image img {
+    transform: scale(1.08);
+}
+
+
+.news-category {
+    position: absolute;
+
+    left: 18px;
+
+    bottom: 18px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.72);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NEWS CARD CONTENT
+========================================================= */
+
+.news-card-content {
+    padding: 25px;
+}
+
+
+.news-date {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #7b2cff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.news-card-content h3 {
+    margin: 0 0 14px;
+
+    color: #222;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.news-card-content p {
+    margin: 0 0 20px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.news-read {
+    display: inline-block;
+
+    color: #6a11cb;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.news-read:hover {
+    color: #00a8df;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FEATURED STORY
+========================================================= */
+
+.news-featured {
+    width: 90%;
+
+    max-width: 1200px;
+
+    min-height: 450px;
+
+    margin: 0 auto 90px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #f5f7fb;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+.news-featured-image {
+    min-height: 450px;
+
+    overflow: hidden;
+}
+
+
+.news-featured-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.news-featured:hover .news-featured-image img {
+    transform: scale(1.05);
+}
+
+
+.news-featured-content {
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+
+.news-featured-content h2 {
+    margin: 0 0 20px;
+
+    color: #222;
+
+    font-size: 40px;
+
+    font-weight: 800;
+
+    line-height: 1.3;
+}
+
+
+.news-featured-content p {
+    margin: 0 0 28px;
+
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   NEWS BUTTON
+========================================================= */
+
+.news-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 13px 26px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00b8e6,
+            #7b2cff
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.news-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   TRAVEL TIP
+========================================================= */
+
+.news-tip {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 90px;
+
+    padding: 45px 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eefaff,
+            #f7f0ff
+        );
+}
+
+
+.news-tip h2 {
+    margin: 0 0 10px;
+
+    color: #222;
+
+    font-size: 30px;
+
+    font-weight: 800;
+}
+
+
+.news-tip p {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   NEWS FOOTER
+========================================================= */
+
+.news-footer {
+    margin-top: 20px;
+
+    background: #111827;
+
+    color: white;
+}
+
+
+.news-footer-container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px 0 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 45px;
+}
+
+
+.news-footer-column h3 {
+    margin: 0 0 20px;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+.news-footer-column p {
+    margin: 0 0 10px;
+
+    color: #b8beca;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.news-footer-column a {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #b8beca;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.news-footer-column a:hover {
+    color: white;
+
+    transform: translateX(4px);
+}
+
+
+.news-footer-bottom {
+    padding: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+
+.news-footer-bottom p {
+    margin: 0;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .news-nav {
+        padding: 0 3%;
+    }
+
+
+    .news-logo span {
+        font-size: 17px;
+    }
+
+
+    .news-menu {
+        gap: 0;
+    }
+
+
+    .news-menu > li > a {
+        padding-left: 8px;
+
+        padding-right: 8px;
+
+        font-size: 13px;
+    }
+
+
+    .news-main {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .news-footer-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .news-nav {
+        position: relative;
+
+        height: auto;
+
+        min-height: 75px;
+
+        flex-direction: column;
+
+        padding: 12px 15px;
+    }
+
+
+    .news-logo {
+        margin-bottom: 10px;
+    }
+
+
+    .news-menu {
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        row-gap: 2px;
+    }
+
+
+    .news-menu > li > a {
+        padding: 10px 8px;
+
+        font-size: 12px;
+    }
+
+
+    .news-dropdown-menu {
+        top: 38px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            translateY(8px);
+    }
+
+
+    .news-dropdown:hover .news-dropdown-menu {
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+
+    .news-hero {
+        margin-top: 0;
+
+        min-height: 520px;
+    }
+
+
+    .news-hero h1 {
+        font-size: 45px;
+    }
+
+
+    .news-hero p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    .news-introduction {
+        margin-top: 65px;
+    }
+
+
+    .news-introduction h2 {
+        font-size: 32px;
+    }
+
+
+    .news-introduction p {
+        font-size: 16px;
+    }
+
+
+    .news-main {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .news-image {
+        height: 250px;
+    }
+
+
+    .news-featured {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .news-featured-image {
+        min-height: 300px;
+
+        height: 300px;
+    }
+
+
+    .news-featured-content {
+        padding: 35px 25px;
+    }
+
+
+    .news-featured-content h2 {
+        font-size: 30px;
+    }
+
+
+    .news-tip {
+        width: 92%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 35px 25px;
+    }
+
+
+    .news-footer-container {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .news-logo span {
+        font-size: 17px;
+    }
+
+
+    .news-logo img {
+        width: 45px;
+
+        height: 45px;
+    }
+
+
+    .news-menu > li > a {
+        padding: 8px 5px;
+
+        font-size: 11px;
+    }
+
+
+    .news-dropdown-menu {
+        min-width: 180px;
+    }
+
+
+    .news-dropdown-menu a {
+        padding: 11px 15px;
+
+        font-size: 13px;
+    }
+
+
+    .news-hero {
+        min-height: 480px;
+    }
+
+
+    .news-hero h1 {
+        font-size: 36px;
+    }
+
+
+    .news-hero p {
+        font-size: 15px;
+    }
+
+
+    .news-small-title {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .news-introduction h2 {
+        font-size: 28px;
+    }
+
+
+    .news-card-content {
+        padding: 22px;
+    }
+
+
+    .news-card-content h3 {
+        font-size: 20px;
+    }
+
+
+    .news-card-content p {
+        font-size: 14px;
+    }
+
+
+    .news-featured-content h2 {
+        font-size: 27px;
+    }
+
+
+    .news-tip h2 {
+        font-size: 26px;
+    }
+
+}

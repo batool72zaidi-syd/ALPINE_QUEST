@@ -1,0 +1,710 @@
+# ALPINE QUEST — Seasons HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Discover the best places to visit in Pakistan in every season.">
+
+    <title>Seasons | ALPINE QUEST</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+===================================================== -->
+
+<header class="navbar">
+
+    <!-- LOGO -->
+
+    <div class="brand">
+
+        <a href="index.html">
+
+            <img src="luke.png"
+                 alt="ALPINE QUEST Logo">
+
+        </a>
+
+        <div class="brand-text">
+
+            <h2>ALPINE QUEST</h2>
+
+            <p>DISCOVER PAKISTAN</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <ul>
+
+            <!-- HOME -->
+
+            <li>
+                <a href="index.html">
+                    HOME
+                </a>
+            </li>
+
+
+            <!-- ABOUT US -->
+
+            <li class="dropdown">
+
+                <a href="about.html">
+                    ABOUT US <span>⌄</span>
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <a href="ourstory.html">
+                            OUR STORY
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pakthrough.html">
+                            PAKISTAN THROUGH OUR EYES
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <!-- SEASONS -->
+
+            <li class="dropdown">
+
+                <a href="seasons.html">
+                    SEASONS <span>⌄</span>
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <a href="spring.html">
+                            SPRING
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="summer.html">
+                            SUMMER
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="autumn.html">
+                            AUTUMN
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="winter.html">
+                            WINTER
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <!-- EXPLORE -->
+
+            <li>
+                <a href="explore.html">
+                    EXPLORE
+                </a>
+            </li>
+
+
+            <!-- NEWS -->
+
+            <li>
+                <a href="news.html">
+                    NEWS
+                </a>
+            </li>
+
+
+            <!-- CONTACT -->
+
+            <li>
+                <a href="contact.html">
+                    CONTACT
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     SEASON SLIDER
+===================================================== -->
+
+<section class="season-slider">
+
+
+    <!-- =================================================
+         SPRING
+    ================================================== -->
+
+    <div class="slide active">
+
+        <img src="hunzasprig.jpeg"
+             alt="Spring in Hunza Valley">
+
+        <div class="overlay"></div>
+
+        <div class="slide-text">
+
+            <p class="season-label">
+                SPRING IN PAKISTAN
+            </p>
+
+            <h1>
+                SPRING ADVENTURES
+            </h1>
+
+            <p>
+                Discover colorful flowers,
+                peaceful valleys and refreshing
+                landscapes.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         SUMMER
+    ================================================== -->
+
+    <div class="slide">
+
+        <img src="northrenareas.jpeg"
+             alt="Summer in Hunza">
+
+        <div class="overlay"></div>
+
+        <div class="slide-text">
+
+            <p class="season-label">
+                SUMMER IN PAKISTAN
+            </p>
+
+            <h1>
+                SUMMER ESCAPES
+            </h1>
+
+            <p>
+                Escape the heat and explore
+                Pakistan's beautiful northern areas.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         AUTUMN
+    ================================================== -->
+
+    <div class="slide">
+
+        <img src="hunza-autumn.jpeg"
+             alt="Autumn in Hunza">
+
+        <div class="overlay"></div>
+
+        <div class="slide-text">
+
+            <p class="season-label">
+                AUTUMN IN PAKISTAN
+            </p>
+
+            <h1>
+                AUTUMN COLORS
+            </h1>
+
+            <p>
+                Watch the northern valleys transform
+                into golden and red landscapes.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         WINTER
+    ================================================== -->
+
+    <div class="slide">
+
+        <img src="karakoram.jpeg"
+             alt="Winter in Murree">
+
+        <div class="overlay"></div>
+
+        <div class="slide-text">
+
+            <p class="season-label">
+                WINTER IN PAKISTAN
+            </p>
+
+            <h1>
+                WINTER WONDERLAND
+            </h1>
+
+            <p>
+                Experience snow-covered mountains
+                and unforgettable winter adventures.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PREVIOUS BUTTON
+    ================================================== -->
+
+    <button class="slider-button prev"
+            onclick="changeSeason(-1)"
+            type="button">
+
+        ❮
+
+    </button>
+
+
+
+    <!-- =================================================
+         NEXT BUTTON
+    ================================================== -->
+
+    <button class="slider-button next"
+            onclick="changeSeason(1)"
+            type="button">
+
+        ❯
+
+    </button>
+
+
+
+    <!-- =================================================
+         SLIDER DOTS
+===================================================== -->
+
+    <div class="slider-dots">
+
+        <button class="dot active-dot"
+                onclick="showSeason(0)"
+                type="button">
+        </button>
+
+        <button class="dot"
+                onclick="showSeason(1)"
+                type="button">
+        </button>
+
+        <button class="dot"
+                onclick="showSeason(2)"
+                type="button">
+        </button>
+
+        <button class="dot"
+                onclick="showSeason(3)"
+                type="button">
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="season-intro">
+
+    <p class="section-label">
+        DISCOVER EVERY SEASON
+    </p>
+
+    <h2>
+        Explore Pakistan<br>
+        Through Every Season
+    </h2>
+
+    <p>
+        Pakistan changes its colors with every season.
+        From blooming valleys in spring to peaceful
+        snowy mountains in winter, every time of year
+        offers a different adventure.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEASON CARDS
+===================================================== -->
+
+<section class="season-container">
+
+
+    <!-- =================================================
+         SPRING CARD
+    ================================================== -->
+
+    <article class="season-card"
+             id="spring">
+
+        <div class="season-image spring-image"></div>
+
+        <div class="season-content">
+
+            <h3>
+                SPRING
+            </h3>
+
+            <h2>
+                Blooming Valleys
+            </h2>
+
+            <p>
+                Spring brings Pakistan's valleys to life.
+                Hunza becomes filled with colorful flowers,
+                fresh greenery and beautiful mountain views.
+            </p>
+
+            <p>
+                It is a wonderful season for photography,
+                sightseeing and peaceful valley adventures.
+            </p>
+
+            <a href="#spring"
+               class="season-button">
+
+                EXPLORE SPRING →
+
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         SUMMER CARD
+    ================================================== -->
+
+    <article class="season-card"
+             id="summer">
+
+        <div class="season-image summer-image">
+
+            <img src="northrenareas.jpeg"
+                 alt="Northern Escapes">
+
+        </div>
+
+        <div class="season-content">
+
+            <h3>
+                SUMMER
+            </h3>
+
+            <h2>
+                Northern Escapes
+            </h2>
+
+            <p>
+                When temperatures rise in many parts of
+                Pakistan, the northern areas become perfect
+                for an escape.
+            </p>
+
+            <p>
+                Explore Hunza, Skardu, Swat and other
+                mountain destinations surrounded by
+                cool air, lakes and spectacular peaks.
+            </p>
+
+            <a href="#summer"
+               class="season-button">
+
+                EXPLORE SUMMER →
+
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         AUTUMN CARD
+    ================================================== -->
+
+    <article class="season-card"
+             id="autumn">
+
+        <div class="season-image autumn-image"></div>
+
+        <div class="season-content">
+
+            <h3>
+                AUTUMN
+            </h3>
+
+            <h2>
+                Golden Landscapes
+            </h2>
+
+            <p>
+                Autumn transforms the northern valleys
+                into beautiful shades of gold, orange
+                and red.
+            </p>
+
+            <p>
+                Hunza and surrounding areas become
+                especially beautiful during this season,
+                making it perfect for scenic journeys.
+            </p>
+
+            <a href="#autumn"
+               class="season-button">
+
+                EXPLORE AUTUMN →
+
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         WINTER CARD
+    ================================================== -->
+
+    <article class="season-card"
+             id="winter">
+
+        <div class="season-image winter-image">
+
+            <img src="karakoram.jpeg"
+                 alt="Winter Wonderland">
+
+        </div>
+
+        <div class="season-content">
+
+            <h3>
+                WINTER
+            </h3>
+
+            <h2>
+                Winter Wonderland
+            </h2>
+
+            <p>
+                Winter covers many of Pakistan's mountain
+                destinations in snow and creates a magical
+                atmosphere.
+            </p>
+
+            <p>
+                Murree, Malam Jabba, Hunza and other
+                northern destinations offer unforgettable
+                snowy landscapes and winter experiences.
+            </p>
+
+            <a href="#winter"
+               class="season-button">
+
+                EXPLORE WINTER →
+
+            </a>
+
+        </div>
+
+    </article>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div>
+
+        <p>
+            PLAN YOUR NEXT JOURNEY
+        </p>
+
+        <h2>
+            Every season<br>
+            has a story.
+        </h2>
+
+        <a href="index.html#destinations"
+           class="light-button">
+
+            START EXPLORING →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <h2>
+        ALPINE QUEST
+    </h2>
+
+    <p>
+        Discover Pakistan. Experience the extraordinary.
+    </p>
+
+    <div class="footer-line"></div>
+
+    <small>
+        © 2026 ALPINE QUEST — ALL RIGHTS RESERVED
+    </small>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+let currentSeason = 0;
+
+const seasonSlides =
+    document.querySelectorAll(".season-slider .slide");
+
+const seasonDots =
+    document.querySelectorAll(".slider-dots .dot");
+
+
+function showSeason(index) {
+
+    if (index >= seasonSlides.length) {
+        index = 0;
+    }
+
+    if (index < 0) {
+        index = seasonSlides.length - 1;
+    }
+
+    seasonSlides.forEach(function(slide) {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    seasonDots.forEach(function(dot) {
+
+        dot.classList.remove("active-dot");
+
+    });
+
+
+    seasonSlides[index].classList.add("active");
+
+    seasonDots[index].classList.add("active-dot");
+
+    currentSeason = index;
+
+}
+
+
+function changeSeason(direction) {
+
+    showSeason(currentSeason + direction);
+
+}
+
+
+/* Automatic slider */
+
+setInterval(function() {
+
+    changeSeason(1);
+
+}, 5000);
+
+</script>
+
+
+</body>
+
+</html>
+```
