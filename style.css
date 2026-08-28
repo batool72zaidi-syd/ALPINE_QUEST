@@ -440,9 +440,12 @@ button {
 }
 
 .discover-btn {
-  
 
-   
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    color: white;
 }
 
 .discover-btn:hover {
@@ -859,6 +862,181 @@ button {
     font-size: 60px;
 
     font-weight: normal;
+}
+
+
+/* =========================================================
+   HOME PAGE - MOBILE / RESPONSIVE
+   (navbar, hero, intro, destinations, cta, season cards)
+   These sections had no responsive rules before -
+   everything below only applies at narrow widths and
+   does not change anything on desktop/laptop.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Navbar stacks into two rows instead of overlapping */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 4%;
+        min-height: auto;
+    }
+
+    .navbar nav {
+        height: auto;
+    }
+
+    .navbar nav ul {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 2px;
+    }
+
+    .navbar nav ul li > a {
+        height: 55px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    /* Dropdown stays anchored under its own link, centered,
+       instead of sticking to the far left of the screen */
+    .navbar nav ul li.dropdown > .dropdown-menu {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 220px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero-content {
+        width: 92%;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+        letter-spacing: 4px;
+    }
+
+    .hero-content .description {
+        font-size: 15px;
+    }
+
+    /* Slider arrows moved off the text and shrunk a bit */
+    .slider-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+        top: auto;
+        bottom: 90px;
+        transform: none;
+    }
+
+    .slider-arrow.previous {
+        left: 15px;
+    }
+
+    .slider-arrow.next {
+        right: 15px;
+    }
+
+    .slider-controls {
+        bottom: 15px;
+    }
+
+    /* Intro */
+    .intro {
+        padding: 70px 7%;
+    }
+
+    .intro h2 {
+        font-size: 34px;
+    }
+
+    /* Destinations / "Places worth discovering" cards -
+       stack instead of squeezing 5 into one row */
+    .destinations {
+        padding: 60px 6%;
+    }
+
+    .heading h2 {
+        font-size: 32px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .destination-card,
+    .destination-card img {
+        min-height: 320px;
+        height: 320px;
+    }
+
+    /* CTA */
+    .cta {
+        min-height: auto;
+        padding: 70px 7%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+    /* Season preview cards - stack instead of two
+       cramped columns with cut-off text */
+    .season-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 60px 6%;
+    }
+
+    .season-image {
+        height: 240px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .brand-text h2 {
+        font-size: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    .hero-content .location {
+        font-size: 9px;
+    }
+
+    .destination-card,
+    .destination-card img {
+        min-height: 260px;
+        height: 260px;
+    }
+
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    .season-content {
+        padding: 25px;
+    }
+
+    .season-content h2 {
+        font-size: 24px;
+    }
 }
 
 
@@ -2085,6 +2263,182 @@ button {
     font-size: 16px;
 
     line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   SEASONS PAGE / ABOUT PAGE / OUR STORY PAGE / EYES PAGE
+   MOBILE / RESPONSIVE
+   These pages had no responsive rules before -
+   desktop/laptop styles above are untouched.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Seasons listing page slider */
+    .season-slider {
+        height: 560px;
+    }
+
+    .season-slider .slide-text h1 {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+    .season-slider .slide-text p:last-child {
+        font-size: 15px;
+    }
+
+    .slider-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        top: auto;
+        bottom: 80px;
+        transform: none;
+    }
+
+    .slider-button.prev {
+        left: 15px;
+    }
+
+    .slider-button.next {
+        right: 15px;
+    }
+
+    .season-intro {
+        padding: 60px 7%;
+    }
+
+    .season-intro h2 {
+        font-size: 32px;
+    }
+
+    /* About / Story / Eyes hero */
+    .about-hero,
+    .story-hero,
+    .eyes-hero {
+        min-height: 480px;
+    }
+
+    .about-hero-content h1,
+    .story-hero-content h1,
+    .eyes-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .about-hero-content > p:last-child,
+    .story-hero-content > p:last-child {
+        font-size: 15px;
+    }
+
+    /* Intro / mission / chapters / vision - stack to one column */
+    .about-intro,
+    .story-intro,
+    .eyes-intro,
+    .about-mission,
+    .story-chapter,
+    .vision-section {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 60px 7%;
+    }
+
+    .about-mission-image img,
+    .story-image img,
+    .vision-image img {
+        min-height: 320px;
+        height: 320px;
+    }
+
+    .about-mission-content,
+    .story-content,
+    .vision-content {
+        padding: 40px 0;
+    }
+
+    .about-intro-heading h2,
+    .story-intro-heading h2,
+    .eyes-intro h2,
+    .about-mission-content h2,
+    .story-content h2,
+    .vision-content h2 {
+        font-size: 32px;
+    }
+
+    /* Explore grid / values / nature - stack down from desktop columns */
+    .about-explore {
+        padding: 60px 6%;
+    }
+
+    .about-explore-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .values-grid,
+    .story-purpose-grid,
+    .nature-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .about-values,
+    .story-purpose,
+    .nature-section {
+        padding: 60px 6%;
+    }
+
+    /* People section */
+    .people-content h2 {
+        font-size: 38px;
+    }
+
+    /* CTA sections */
+    .about-cta,
+    .story-final,
+    .final-eyes {
+        min-height: 400px;
+    }
+
+    .about-cta h2,
+    .story-final h2,
+    .final-eyes h2,
+    .final-eyes-content h2 {
+        font-size: 36px;
+    }
+
+    .eyes-hero-content h1 {
+        font-size: 38px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .about-hero-content h1,
+    .story-hero-content h1,
+    .eyes-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .about-explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-intro-heading h2,
+    .story-intro-heading h2,
+    .eyes-intro h2,
+    .about-mission-content h2,
+    .story-content h2,
+    .vision-content h2 {
+        font-size: 27px;
+    }
+
+    .people-content h2 {
+        font-size: 28px;
+    }
 }
 
 
@@ -8213,7 +8567,7 @@ button {
 
     background: #14262e;
 
-    color: white;
+    color: none;
 
     font-size: 11px;
 
